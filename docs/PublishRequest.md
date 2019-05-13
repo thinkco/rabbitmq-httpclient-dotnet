@@ -3,10 +3,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RoutingKey** | **string** |  | [optional] 
-**Payload** | **string** |  | [optional] 
-**PayloadEncoding** | **string** |  | [optional] 
-**Properties** | [**MessageProperties**](MessageProperties.md) |  | [optional] 
+**RoutingKey** | **string** |  | 
+**Payload** | **string** |  | 
+**PayloadEncoding** | **string** |  | [default to PayloadEncodingEnum.String]
+**Properties** | [**PublishProperties**](PublishProperties.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

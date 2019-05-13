@@ -2400,30 +2400,19 @@ components:
           type: boolean
       title: PublishResponse
       type: object
-    MessageHeader:
-      example:
-        name: name
-      properties:
-        name:
-          type: string
-      title: MessageHeader
-      type: object
     MessageProperties:
       example:
-        headers:
-        - name: name
-        - name: name
         cluster_id: cluster_id
         content_type: content_type
         user_id: user_id
         correlation_id: correlation_id
         message_id: message_id
         priority: 5
-        application_id: application_id
+        app_id: app_id
         delivery_mode: 5
         timestamp: 1
       properties:
-        application_id:
+        app_id:
           type: string
         correlation_id:
           type: string
@@ -2436,44 +2425,42 @@ components:
         content_type:
           type: string
         delivery_mode:
+          description: 1 = Non Persistent, 2 = Persistent
           type: integer
         priority:
           type: integer
         cluster_id:
           type: string
-        headers:
-          items:
-            $ref: '#/components/schemas/MessageHeader'
-          type: array
       title: MessageProperties
       type: object
     PublishRequest:
       example:
         payload: payload
-        payload_encoding: payload_encoding
+        payload_encoding: string
         routing_key: routing_key
         properties:
-          headers:
-          - name: name
-          - name: name
-          cluster_id: cluster_id
-          content_type: content_type
           user_id: user_id
           correlation_id: correlation_id
           message_id: message_id
-          priority: 5
-          application_id: application_id
-          delivery_mode: 5
-          timestamp: 1
+          app_id: app_id
+          delivery_mode: 0
       properties:
         routing_key:
           type: string
         payload:
           type: string
         payload_encoding:
+          default: string
+          enum:
+          - string
+          - base64
           type: string
         properties:
-          $ref: '#/components/schemas/MessageProperties'
+          $ref: '#/components/schemas/PublishProperties'
+      required:
+      - payload
+      - payload_encoding
+      - routing_key
       title: PublishRequest
       type: object
     ExchangeRequest:
@@ -2793,28 +2780,22 @@ components:
         routing_key: routing_key
         message_count: 0
         properties:
-        - headers:
-          - name: name
-          - name: name
-          cluster_id: cluster_id
+        - cluster_id: cluster_id
           content_type: content_type
           user_id: user_id
           correlation_id: correlation_id
           message_id: message_id
           priority: 5
-          application_id: application_id
+          app_id: app_id
           delivery_mode: 5
           timestamp: 1
-        - headers:
-          - name: name
-          - name: name
-          cluster_id: cluster_id
+        - cluster_id: cluster_id
           content_type: content_type
           user_id: user_id
           correlation_id: correlation_id
           message_id: message_id
           priority: 5
-          application_id: application_id
+          app_id: app_id
           delivery_mode: 5
           timestamp: 1
         redelivered: true
@@ -2841,19 +2822,36 @@ components:
       type: object
     ConsumeRequest:
       example:
-        truncate: 6
+        truncate: 3013728
         count: 0
-        encoding: encoding
-        ackmode: ackmode
+        encoding: string
+        ackmode: ack_requeue_false
       properties:
         count:
+          minimum: 0
           type: integer
         ackmode:
+          default: ack_requeue_false
+          enum:
+          - ack_requeue_true
+          - ack_requeue_false
           type: string
         encoding:
+          default: string
+          enum:
+          - string
+          - base64
+          - auto
           type: string
         truncate:
+          maximum: 5E+6
+          minimum: 0
           type: integer
+      required:
+      - ackmode
+      - count
+      - encoding
+      - truncate
       title: ConsumeRequest
       type: object
     QueueAction:
@@ -2868,6 +2866,27 @@ components:
       required:
       - action
       title: QueueAction
+      type: object
+    PublishProperties:
+      example:
+        user_id: user_id
+        correlation_id: correlation_id
+        message_id: message_id
+        app_id: app_id
+        delivery_mode: 0
+      properties:
+        app_id:
+          type: string
+        correlation_id:
+          type: string
+        message_id:
+          type: string
+        user_id:
+          type: string
+        delivery_mode:
+          description: 1 = Non Persistent, 2 = Persistent
+          type: integer
+      title: PublishProperties
       type: object
     inline_response_404:
       properties:

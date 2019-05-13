@@ -30,7 +30,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.2";
+        public const string Version = "1.0.3";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -99,7 +99,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
         [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
-            UserAgent = "OpenAPI-Generator/1.0.2/csharp";
+            UserAgent = "OpenAPI-Generator/1.0.3/csharp";
             BasePath = "http://mb1.bus.adaptive.me/rabbitmq/api";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -333,7 +333,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 1.0\n";
-            report += "    SDK Package Version: 1.0.2\n";
+            report += "    SDK Package Version: 1.0.3\n";
 
             return report;
         }

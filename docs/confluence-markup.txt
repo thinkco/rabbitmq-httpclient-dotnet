@@ -3554,21 +3554,17 @@ h2. Models
         ||Field Name||Required||Type||Description||
          |reason | |String | |
  |error | |String | |
-        h3. MessageHeader
-        ||Field Name||Required||Type||Description||
-         |name | |String | |
         h3. MessageProperties
         ||Field Name||Required||Type||Description||
-         |applicationUnderscoreid | |String | |
+         |appUnderscoreid | |String | |
  |correlationUnderscoreid | |String | |
  |messageUnderscoreid | |String | |
  |userUnderscoreid | |String | |
  |timestamp | |Integer | |
  |contentUnderscoretype | |String | |
- |deliveryUnderscoremode | |Integer | |
+ |deliveryUnderscoremode | |Integer |1 &#x3D; Non Persistent, 2 &#x3D; Persistent |
  |priority | |Integer | |
  |clusterUnderscoreid | |String | |
- |headers | |array[MessageHeader] | |
         h3. Overview
         ||Field Name||Required||Type||Description||
          |churnUnderscorerates | |Overview_churn_rates | |
@@ -3691,12 +3687,19 @@ h2. Models
  |user | |String | |
  |vhost | |String | |
  |write | |String | |
+        h3. PublishProperties
+        ||Field Name||Required||Type||Description||
+         |appUnderscoreid | |String | |
+ |correlationUnderscoreid | |String | |
+ |messageUnderscoreid | |String | |
+ |userUnderscoreid | |String | |
+ |deliveryUnderscoremode | |Integer |1 &#x3D; Non Persistent, 2 &#x3D; Persistent |
         h3. PublishRequest
         ||Field Name||Required||Type||Description||
          |routingUnderscorekey | |String | |
  |payload | |String | |
  |payloadUnderscoreencoding | |String | |
- |properties | |MessageProperties | |
+ |properties | |PublishProperties | |
         h3. PublishResponse
         ||Field Name||Required||Type||Description||
          |routed | |Boolean | |

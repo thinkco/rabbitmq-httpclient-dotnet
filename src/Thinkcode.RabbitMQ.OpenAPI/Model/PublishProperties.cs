@@ -26,34 +26,26 @@ using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConver
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
 {
     /// <summary>
-    /// MessageProperties
+    /// PublishProperties
     /// </summary>
     [DataContract]
-    public partial class MessageProperties :  IEquatable<MessageProperties>, IValidatableObject
+    public partial class PublishProperties :  IEquatable<PublishProperties>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MessageProperties" /> class.
+        /// Initializes a new instance of the <see cref="PublishProperties" /> class.
         /// </summary>
         /// <param name="appId">appId.</param>
         /// <param name="correlationId">correlationId.</param>
         /// <param name="messageId">messageId.</param>
         /// <param name="userId">userId.</param>
-        /// <param name="timestamp">timestamp.</param>
-        /// <param name="contentType">contentType.</param>
         /// <param name="deliveryMode">1 &#x3D; Non Persistent, 2 &#x3D; Persistent.</param>
-        /// <param name="priority">priority.</param>
-        /// <param name="clusterId">clusterId.</param>
-        public MessageProperties(string appId = default(string), string correlationId = default(string), string messageId = default(string), string userId = default(string), int timestamp = default(int), string contentType = default(string), int deliveryMode = default(int), int priority = default(int), string clusterId = default(string))
+        public PublishProperties(string appId = default(string), string correlationId = default(string), string messageId = default(string), string userId = default(string), int deliveryMode = default(int))
         {
             this.AppId = appId;
             this.CorrelationId = correlationId;
             this.MessageId = messageId;
             this.UserId = userId;
-            this.Timestamp = timestamp;
-            this.ContentType = contentType;
             this.DeliveryMode = deliveryMode;
-            this.Priority = priority;
-            this.ClusterId = clusterId;
         }
         
         /// <summary>
@@ -81,35 +73,11 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         public string UserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Timestamp
-        /// </summary>
-        [DataMember(Name="timestamp", EmitDefaultValue=false)]
-        public int Timestamp { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ContentType
-        /// </summary>
-        [DataMember(Name="content_type", EmitDefaultValue=false)]
-        public string ContentType { get; set; }
-
-        /// <summary>
         /// 1 &#x3D; Non Persistent, 2 &#x3D; Persistent
         /// </summary>
         /// <value>1 &#x3D; Non Persistent, 2 &#x3D; Persistent</value>
         [DataMember(Name="delivery_mode", EmitDefaultValue=false)]
         public int DeliveryMode { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Priority
-        /// </summary>
-        [DataMember(Name="priority", EmitDefaultValue=false)]
-        public int Priority { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ClusterId
-        /// </summary>
-        [DataMember(Name="cluster_id", EmitDefaultValue=false)]
-        public string ClusterId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -118,16 +86,12 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class MessageProperties {\n");
+            sb.Append("class PublishProperties {\n");
             sb.Append("  AppId: ").Append(AppId).Append("\n");
             sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
             sb.Append("  MessageId: ").Append(MessageId).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
-            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
-            sb.Append("  ContentType: ").Append(ContentType).Append("\n");
             sb.Append("  DeliveryMode: ").Append(DeliveryMode).Append("\n");
-            sb.Append("  Priority: ").Append(Priority).Append("\n");
-            sb.Append("  ClusterId: ").Append(ClusterId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -148,15 +112,15 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as MessageProperties);
+            return this.Equals(input as PublishProperties);
         }
 
         /// <summary>
-        /// Returns true if MessageProperties instances are equal
+        /// Returns true if PublishProperties instances are equal
         /// </summary>
-        /// <param name="input">Instance of MessageProperties to be compared</param>
+        /// <param name="input">Instance of PublishProperties to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(MessageProperties input)
+        public bool Equals(PublishProperties input)
         {
             if (input == null)
                 return false;
@@ -183,29 +147,9 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
                     this.UserId.Equals(input.UserId))
                 ) && 
                 (
-                    this.Timestamp == input.Timestamp ||
-                    (this.Timestamp != null &&
-                    this.Timestamp.Equals(input.Timestamp))
-                ) && 
-                (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
                     this.DeliveryMode == input.DeliveryMode ||
                     (this.DeliveryMode != null &&
                     this.DeliveryMode.Equals(input.DeliveryMode))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
                 );
         }
 
@@ -226,16 +170,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
                     hashCode = hashCode * 59 + this.MessageId.GetHashCode();
                 if (this.UserId != null)
                     hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Timestamp != null)
-                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
                 if (this.DeliveryMode != null)
                     hashCode = hashCode * 59 + this.DeliveryMode.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 return hashCode;
             }
         }

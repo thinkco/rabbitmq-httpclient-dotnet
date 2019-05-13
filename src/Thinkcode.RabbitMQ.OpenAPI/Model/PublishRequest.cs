@@ -32,16 +32,64 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     public partial class PublishRequest :  IEquatable<PublishRequest>, IValidatableObject
     {
         /// <summary>
+        /// Defines PayloadEncoding
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PayloadEncodingEnum
+        {
+            /// <summary>
+            /// Enum String for value: string
+            /// </summary>
+            [EnumMember(Value = "string")]
+            String = 1,
+
+            /// <summary>
+            /// Enum Base64 for value: base64
+            /// </summary>
+            [EnumMember(Value = "base64")]
+            Base64 = 2
+
+        }
+
+        /// <summary>
+        /// Gets or Sets PayloadEncoding
+        /// </summary>
+        [DataMember(Name="payload_encoding", EmitDefaultValue=false)]
+        public PayloadEncodingEnum PayloadEncoding { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PublishRequest" /> class.
         /// </summary>
-        /// <param name="routingKey">routingKey.</param>
-        /// <param name="payload">payload.</param>
-        /// <param name="payloadEncoding">payloadEncoding.</param>
+        [JsonConstructorAttribute]
+        protected PublishRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublishRequest" /> class.
+        /// </summary>
+        /// <param name="routingKey">routingKey (required).</param>
+        /// <param name="payload">payload (required).</param>
+        /// <param name="payloadEncoding">payloadEncoding (required) (default to PayloadEncodingEnum.String).</param>
         /// <param name="properties">properties.</param>
-        public PublishRequest(string routingKey = default(string), string payload = default(string), string payloadEncoding = default(string), MessageProperties properties = default(MessageProperties))
+        public PublishRequest(string routingKey = default(string), string payload = default(string), PayloadEncodingEnum payloadEncoding = PayloadEncodingEnum.String, PublishProperties properties = default(PublishProperties))
         {
-            this.RoutingKey = routingKey;
-            this.Payload = payload;
+            // to ensure "routingKey" is required (not null)
+            if (routingKey == null)
+            {
+                throw new InvalidDataException("routingKey is a required property for PublishRequest and cannot be null");
+            }
+            else
+            {
+                this.RoutingKey = routingKey;
+            }
+
+            // to ensure "payload" is required (not null)
+            if (payload == null)
+            {
+                throw new InvalidDataException("payload is a required property for PublishRequest and cannot be null");
+            }
+            else
+            {
+                this.Payload = payload;
+            }
+
             this.PayloadEncoding = payloadEncoding;
             this.Properties = properties;
         }
@@ -59,16 +107,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         public string Payload { get; set; }
 
         /// <summary>
-        /// Gets or Sets PayloadEncoding
-        /// </summary>
-        [DataMember(Name="payload_encoding", EmitDefaultValue=false)]
-        public string PayloadEncoding { get; set; }
-
-        /// <summary>
         /// Gets or Sets Properties
         /// </summary>
         [DataMember(Name="properties", EmitDefaultValue=false)]
-        public MessageProperties Properties { get; set; }
+        public PublishProperties Properties { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -128,8 +170,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
                 ) && 
                 (
                     this.PayloadEncoding == input.PayloadEncoding ||
-                    (this.PayloadEncoding != null &&
-                    this.PayloadEncoding.Equals(input.PayloadEncoding))
+                    this.PayloadEncoding.Equals(input.PayloadEncoding)
                 ) && 
                 (
                     this.Properties == input.Properties ||
@@ -151,8 +192,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
                     hashCode = hashCode * 59 + this.RoutingKey.GetHashCode();
                 if (this.Payload != null)
                     hashCode = hashCode * 59 + this.Payload.GetHashCode();
-                if (this.PayloadEncoding != null)
-                    hashCode = hashCode * 59 + this.PayloadEncoding.GetHashCode();
+                hashCode = hashCode * 59 + this.PayloadEncoding.GetHashCode();
                 if (this.Properties != null)
                     hashCode = hashCode * 59 + this.Properties.GetHashCode();
                 return hashCode;

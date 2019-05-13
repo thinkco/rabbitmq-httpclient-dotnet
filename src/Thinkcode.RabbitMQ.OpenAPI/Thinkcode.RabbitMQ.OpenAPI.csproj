@@ -3,6 +3,8 @@
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
     <AssemblyName>Thinkcode.RabbitMQ.OpenAPI</AssemblyName>
     <PackageId>Thinkcode.RabbitMQ.OpenAPI</PackageId>
     <OutputType>Library</OutputType>
@@ -15,14 +17,14 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>Thinkcode.RabbitMQ.OpenAPI</RootNamespace>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
-      <PackageReference Include="CompareNETObjects" Version="4.59.0" />
+      <PackageReference Include="CompareNETObjects" Version="4.57.0" />
       <PackageReference Include="JsonSubTypes" Version="1.5.2" />
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-      <PackageReference Include="RestSharp" Version="106.6.9" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+      <PackageReference Include="RestSharp" Version="106.6.7" />
       <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   </ItemGroup>
 
