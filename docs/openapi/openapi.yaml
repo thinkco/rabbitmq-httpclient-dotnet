@@ -2780,16 +2780,7 @@ components:
         routing_key: routing_key
         message_count: 0
         properties:
-        - cluster_id: cluster_id
-          content_type: content_type
-          user_id: user_id
-          correlation_id: correlation_id
-          message_id: message_id
-          priority: 5
-          app_id: app_id
-          delivery_mode: 5
-          timestamp: 1
-        - cluster_id: cluster_id
+          cluster_id: cluster_id
           content_type: content_type
           user_id: user_id
           correlation_id: correlation_id
@@ -2811,9 +2802,7 @@ components:
         payload_encoding:
           type: string
         properties:
-          items:
-            $ref: '#/components/schemas/MessageProperties'
-          type: array
+          $ref: '#/components/schemas/MessageProperties'
         redelivered:
           type: boolean
         routing_key:

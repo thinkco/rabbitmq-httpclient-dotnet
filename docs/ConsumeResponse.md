@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Payload** | **string** |  | [optional] 
 **PayloadBytes** | **int** |  | [optional] 
 **PayloadEncoding** | **string** |  | [optional] 
-**Properties** | [**List&lt;MessageProperties&gt;**](MessageProperties.md) |  | [optional] 
+**Properties** | [**MessageProperties**](MessageProperties.md) |  | [optional] 
 **Redelivered** | **bool** |  | [optional] 
 **RoutingKey** | **string** |  | [optional] 
 

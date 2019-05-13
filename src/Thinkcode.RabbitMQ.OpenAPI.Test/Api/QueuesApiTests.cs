@@ -66,7 +66,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             //string queue = null;
             //ConsumeRequest body = null;
             //var response = instance.ConsumeMessage(vhost, queue, body);
-            //Assert.IsType<ICollection<ConsumeResponse>> (response, "response is ICollection<ConsumeResponse>");
+            //Assert.IsType<List<ConsumeResponse>> (response, "response is List<ConsumeResponse>");
         }
         
         /// <summary>
@@ -148,7 +148,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             //string vhost = null;
             //string queue = null;
             //var response = instance.ListBindingsForQueue(vhost, queue);
-            //Assert.IsType<ICollection<Binding>> (response, "response is ICollection<Binding>");
+            //Assert.IsType<List<Binding>> (response, "response is List<Binding>");
         }
         
         /// <summary>
@@ -159,7 +159,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.ListQueues();
-            //Assert.IsType<ICollection<Queue>> (response, "response is ICollection<Queue>");
+            //Assert.IsType<List<Queue>> (response, "response is List<Queue>");
         }
         
         /// <summary>
@@ -171,7 +171,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string vhost = null;
             //var response = instance.ListQueuesForVirtualHost(vhost);
-            //Assert.IsType<ICollection<Queue>> (response, "response is ICollection<Queue>");
+            //Assert.IsType<List<Queue>> (response, "response is List<Queue>");
         }
         
     }

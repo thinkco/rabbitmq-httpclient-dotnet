@@ -124,7 +124,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.ListVirtualHosts();
-            //Assert.IsType<ICollection<VHost>> (response, "response is ICollection<VHost>");
+            //Assert.IsType<List<VHost>> (response, "response is List<VHost>");
         }
         
     }

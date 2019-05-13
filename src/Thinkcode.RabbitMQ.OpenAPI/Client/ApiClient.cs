@@ -43,14 +43,19 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
         {
             // OpenAPI generated types generally hide default constructors.
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-                ContractResolver = new DefaultContractResolver
+            ContractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new CamelCaseNamingStrategy()
                 {
-                    NamingStrategy = new CamelCaseNamingStrategy()
-                    {
-                        OverrideSpecifiedNames = true
-                    }
+                    OverrideSpecifiedNames = true
                 }
-        };
+
+            },
+            MissingMemberHandling = MissingMemberHandling.Ignore,
+            NullValueHandling = NullValueHandling.Ignore
+
+
+    };
 
         public CustomJsonCodec(IReadableConfiguration configuration)
         {

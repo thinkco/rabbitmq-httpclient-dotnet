@@ -41,7 +41,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="properties">properties.</param>
         /// <param name="redelivered">redelivered.</param>
         /// <param name="routingKey">routingKey.</param>
-        public ConsumeResponse(string exchange = default(string), int messageCount = default(int), string payload = default(string), int payloadBytes = default(int), string payloadEncoding = default(string), List<MessageProperties> properties = default(List<MessageProperties>), bool redelivered = default(bool), string routingKey = default(string))
+        public ConsumeResponse(string exchange = default(string), int messageCount = default(int), string payload = default(string), int payloadBytes = default(int), string payloadEncoding = default(string), MessageProperties properties = default(MessageProperties), bool redelivered = default(bool), string routingKey = default(string))
         {
             this.Exchange = exchange;
             this.MessageCount = messageCount;
@@ -87,7 +87,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Properties
         /// </summary>
         [DataMember(Name="properties", EmitDefaultValue=false)]
-        public List<MessageProperties> Properties { get; set; }
+        public MessageProperties Properties { get; set; }
 
         /// <summary>
         /// Gets or Sets Redelivered
@@ -178,8 +178,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
                 ) && 
                 (
                     this.Properties == input.Properties ||
-                    this.Properties != null &&
-                    this.Properties.SequenceEqual(input.Properties)
+                    (this.Properties != null &&
+                    this.Properties.Equals(input.Properties))
                 ) && 
                 (
                     this.Redelivered == input.Redelivered ||

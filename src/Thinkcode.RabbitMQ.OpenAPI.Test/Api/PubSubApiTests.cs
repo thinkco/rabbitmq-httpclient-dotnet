@@ -75,10 +75,12 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
         [Fact]
         public void ConsumeMessageTest()
         {
-            Console.WriteLine("Testing");
-            var body = new ConsumeRequest(2, "ack_requeue_true", "auto", 50000);
-            var response = instance.ConsumeMessage(vhost, queue, body);
+            ConsoleRunnerLogger logger = new ConsoleRunnerLogger(true);
+            logger.LogMessage("Testing");
+            var body = new ConsumeRequest(1, "ack_requeue_true", "auto", 50000);
+            var response = instance.ConsumeMessageWithHttpInfo(vhost, queue, body);
             Assert.NotNull(response);
+            Assert.StrictEqual("lala",response.ErrorText);
         }
 
         /// <summary>

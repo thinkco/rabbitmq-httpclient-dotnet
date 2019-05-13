@@ -103,7 +103,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.ListExchanges();
-            //Assert.IsType<ICollection<Exchange>> (response, "response is ICollection<Exchange>");
+            //Assert.IsType<List<Exchange>> (response, "response is List<Exchange>");
         }
         
         /// <summary>
@@ -115,7 +115,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string vhost = null;
             //var response = instance.ListExchangesForHost(vhost);
-            //Assert.IsType<ICollection<Exchange>> (response, "response is ICollection<Exchange>");
+            //Assert.IsType<List<Exchange>> (response, "response is List<Exchange>");
         }
         
         /// <summary>

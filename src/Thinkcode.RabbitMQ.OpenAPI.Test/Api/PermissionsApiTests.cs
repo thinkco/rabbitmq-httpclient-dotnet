@@ -64,7 +64,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string user = null;
             //var response = instance.ListUserPermissions(user);
-            //Assert.IsType<ICollection<PermissionUser>> (response, "response is ICollection<PermissionUser>");
+            //Assert.IsType<List<PermissionUser>> (response, "response is List<PermissionUser>");
         }
         
         /// <summary>
@@ -76,7 +76,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             // TODO uncomment below to test the method and replace null with proper value
             //string user = null;
             //var response = instance.ListUsersTopicPermissions(user);
-            //Assert.IsType<ICollection<PermissionTopic>> (response, "response is ICollection<PermissionTopic>");
+            //Assert.IsType<List<PermissionTopic>> (response, "response is List<PermissionTopic>");
         }
         
         /// <summary>
@@ -87,7 +87,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.ListUsersWithoutPermissions();
-            //Assert.IsType<ICollection<User>> (response, "response is ICollection<User>");
+            //Assert.IsType<List<User>> (response, "response is List<User>");
         }
         
     }

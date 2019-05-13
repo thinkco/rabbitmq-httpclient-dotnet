@@ -108,7 +108,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //var response = instance.ListBindings();
-            //Assert.IsType<ICollection<Binding>> (response, "response is ICollection<Binding>");
+            //Assert.IsType<List<Binding>> (response, "response is List<Binding>");
         }
         
         /// <summary>
@@ -121,7 +121,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             //string vhost = null;
             //string exchange = null;
             //var response = instance.ListBindingsAsDestination(vhost, exchange);
-            //Assert.IsType<ICollection<Binding>> (response, "response is ICollection<Binding>");
+            //Assert.IsType<List<Binding>> (response, "response is List<Binding>");
         }
         
         /// <summary>
@@ -134,7 +134,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             //string vhost = null;
             //string exchange = null;
             //var response = instance.ListBindingsAsSource(vhost, exchange);
-            //Assert.IsType<ICollection<Binding>> (response, "response is ICollection<Binding>");
+            //Assert.IsType<List<Binding>> (response, "response is List<Binding>");
         }
         
         /// <summary>
@@ -147,7 +147,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             //string vhost = null;
             //string queue = null;
             //var response = instance.ListBindingsForQueue(vhost, queue);
-            //Assert.IsType<ICollection<Binding>> (response, "response is ICollection<Binding>");
+            //Assert.IsType<List<Binding>> (response, "response is List<Binding>");
         }
         
         /// <summary>
@@ -161,7 +161,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             //string exchange = null;
             //string queue = null;
             //var response = instance.ListBindingsForQueueExchange(vhost, exchange, queue);
-            //Assert.IsType<ICollection<Binding>> (response, "response is ICollection<Binding>");
+            //Assert.IsType<List<Binding>> (response, "response is List<Binding>");
         }
         
     }

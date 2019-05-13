@@ -3506,7 +3506,7 @@ h2. Models
  |payload | |String | |
  |payloadUnderscorebytes | |Integer | |
  |payloadUnderscoreencoding | |String | |
- |properties | |array[MessageProperties] | |
+ |properties | |MessageProperties | |
  |redelivered | |Boolean | |
  |routingUnderscorekey | |String | |
         h3. Definition
