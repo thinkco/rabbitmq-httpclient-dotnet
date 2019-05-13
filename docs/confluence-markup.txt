@@ -1,0 +1,3843 @@
+h1. Rabbitmq Http API This is the OpenAPI specification of the RabbitMQ HTTP API. For more information, please refer to [HTTP API](https://cdn.rawgit.com/rabbitmq/rabbitmq-management/v3.7.14/priv/www/api/index.html) official documentation.
+
+*Version:* 1.0
+
+----
+
+{toc:printable=true|style=square|minLevel=2|maxLevel=3|type=list|outline=false|include=.*}
+
+h2. Endpoints
+
+    h3. createBindingsForQueueExchange
+    {status:colour=Yellow|title=post|subtle=false}
+    {code}
+    post /bindings/{vhost}/e/{exchange}/q/{queue}
+    {code}
+    *Summary:* Create Bindings for Queue
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+        h5. Body Parameter
+        ||Name||Description||Required||Default||Pattern||
+        |body | |(x) | |  |
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 201
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 405
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+    ----
+
+    h3. deleteBindingForQueueExchange
+    {status:colour=Yellow|title=delete|subtle=false}
+    {code}
+    delete /bindings/{vhost}/e/{exchange}/q/{queue}/{propertyKey}
+    {code}
+    *Summary:* Delete Binding for Queue
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+|propertyKey | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+inline_response_404
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/inline_response_404"
+      },
+      "example" : {
+        "error" : "Object Not Found",
+        "reason" : "Not Found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. getBindingForQueueExchange
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /bindings/{vhost}/e/{exchange}/q/{queue}/{propertyKey}
+    {code}
+    *Summary:* Get Binding for Queue
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+|propertyKey | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+Binding
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Binding"
+      },
+      "example" : {
+        "arguments" : {
+          "x-arg" : "value"
+        },
+        "destination" : "shared.queue.cloud4",
+        "destination_type" : "queue",
+        "properties_key" : "my_routing_key~O1oKpA",
+        "routing_key" : "my_routing_key",
+        "source" : "shared.exchange",
+        "vhost" : "cloud"
+      }
+    }
+  }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "Object Not Found",
+        "reason" : "Not Found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listBindings
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /bindings
+    {code}
+    *Summary:* List Bindings
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[Binding]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Binding"
+        }
+      },
+      "example" : [ {
+        "arguments" : { },
+        "destination" : "shared.queue.cloud",
+        "destination_type" : "queue",
+        "properties_key" : "shared.queue.cloud",
+        "routing_key" : "shared.queue.cloud",
+        "source" : "",
+        "vhost" : "cloud"
+      } ]
+    }
+  }
+}
+        {code}
+        *Status Code:* 400
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 500
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+    ----
+
+    h3. listBindingsAsDestination
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /exchanges/{vhost}/{exchange}/bindings/destination
+    {code}
+    *Summary:* List Bindings as Destination
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[Binding]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Binding"
+        }
+      },
+      "example" : [ {
+        "arguments" : { },
+        "destination" : "shared.exchange",
+        "destination_type" : "exchange",
+        "properties_key" : "shared.queue.cloud.key",
+        "routing_key" : "shared.queue.cloud.key",
+        "source" : "test.exchange",
+        "vhost" : "cloud"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listBindingsAsSource
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /exchanges/{vhost}/{exchange}/bindings/source
+    {code}
+    *Summary:* List Bindings as Source
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[Binding]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Binding"
+        }
+      },
+      "example" : [ {
+        "arguments" : { },
+        "destination" : "shared.queue.cloud",
+        "destination_type" : "queue",
+        "properties_key" : "shared.queue.cloud.key",
+        "routing_key" : "shared.queue.cloud.key",
+        "source" : "shared.exchange",
+        "vhost" : "cloud"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listBindingsForQueue
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /queues/{vhost}/{queue}/bindings
+    {code}
+    *Summary:* List All Bindings for Queue
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[Binding]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Binding"
+        }
+      },
+      "example" : [ {
+        "arguments" : { },
+        "destination" : "shared.queue.cloud",
+        "destination_type" : "queue",
+        "properties_key" : "shared.queue.cloud",
+        "routing_key" : "shared.queue.cloud",
+        "source" : "",
+        "vhost" : "cloud"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listBindingsForQueueExchange
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /bindings/{vhost}/e/{exchange}/q/{queue}
+    {code}
+    *Summary:* List Bindings for Queue
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[Binding]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Binding"
+        }
+      },
+      "example" : [ {
+        "arguments" : {
+          "x-arg" : "value"
+        },
+        "destination" : "shared.queue.cloud4",
+        "destination_type" : "queue",
+        "properties_key" : "my_routing_key~O1oKpA",
+        "routing_key" : "my_routing_key",
+        "source" : "shared.exchange",
+        "vhost" : "cloud"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. createExchange
+    {status:colour=Yellow|title=put|subtle=false}
+    {code}
+    put /exchanges/{vhost}/{exchange}
+    {code}
+    *Summary:* Create Exchange
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+
+        h5. Body Parameter
+        ||Name||Description||Required||Default||Pattern||
+        |body | |(x) | |  |
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 201
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "headers" : {
+    "Content-Security-Policy" : {
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "Vary" : {
+      "schema" : {
+        "type" : "string"
+      }
+    }
+  },
+  "content" : { }
+}
+        {code}
+    ----
+
+    h3. deleteExchange
+    {status:colour=Yellow|title=delete|subtle=false}
+    {code}
+    delete /exchanges/{vhost}/{exchange}
+    {code}
+    *Summary:* Delete Exchange
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "Object Not Found",
+        "reason" : "Not Found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. getExchange
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /exchanges/{vhost}/{exchange}
+    {code}
+    *Summary:* Read Exchange
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+Exchange
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Exchange"
+      },
+      "example" : {
+        "arguments" : { },
+        "auto_delete" : false,
+        "durable" : true,
+        "incoming" : [ ],
+        "internal" : false,
+        "message_stats" : {
+          "publish_in" : 1247498,
+          "publish_in_details" : {
+            "rate" : 0
+          },
+          "publish_out" : 1246679,
+          "publish_out_details" : {
+            "rate" : 0
+          }
+        },
+        "name" : "shared.exchange",
+        "outgoing" : [ ],
+        "type" : "direct",
+        "user_who_performed_action" : "adminuser",
+        "vhost" : "cloud"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listExchanges
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /exchanges
+    {code}
+    *Summary:* List Exchanges
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[Exchange]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Exchange"
+        }
+      },
+      "example" : [ {
+        "arguments" : { },
+        "auto_delete" : false,
+        "durable" : true,
+        "internal" : false,
+        "name" : "",
+        "type" : "direct",
+        "user_who_performed_action" : "rmq-internal",
+        "vhost" : "/"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listExchangesForHost
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /exchanges/{vhost}
+    {code}
+    *Summary:* List Exchanges for VHost
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[Exchange]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Exchange"
+        }
+      },
+      "example" : [ {
+        "arguments" : { },
+        "auto_delete" : false,
+        "durable" : true,
+        "internal" : false,
+        "name" : "",
+        "type" : "direct",
+        "user_who_performed_action" : "adminuser",
+        "vhost" : "cloud"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. publishMessage
+    {status:colour=Yellow|title=post|subtle=false}
+    {code}
+    post /exchanges/{vhost}/{exchange}/publish
+    {code}
+    *Summary:* Publish Message
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+
+        h5. Body Parameter
+        ||Name||Description||Required||Default||Pattern||
+        |body | |(x) | |  |
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+PublishResponse
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PublishResponse"
+      },
+      "example" : {
+        "routed" : true
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. getClusterName
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /cluster-name
+    {code}
+    *Summary:* Read Cluster Name
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+ClusterName
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ClusterName"
+      },
+      "example" : {
+        "name" : "rabbit@rabbitmq-cloud-0.rabbitmq-cloud.trumpf.svc.cluster.local"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. getDefinitionsForVirtualHost
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /definitions/{vhost}
+    {code}
+    *Summary:* Get Definitions for VHost
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+Definition
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "headers" : {
+    "Content-Security-Policy" : {
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "Vary" : {
+      "schema" : {
+        "type" : "string"
+      }
+    }
+  },
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Definition"
+      },
+      "example" : {
+        "bindings" : [ {
+          "arguments" : { },
+          "destination" : "shared.queue.cloud",
+          "destination_type" : "queue",
+          "routing_key" : "shared.queue.cloud.key",
+          "source" : "shared.exchange"
+        } ],
+        "exchanges" : [ {
+          "arguments" : { },
+          "auto_delete" : false,
+          "durable" : true,
+          "internal" : false,
+          "name" : "shared.exchange",
+          "type" : "direct"
+        } ],
+        "parameters" : [ ],
+        "policies" : [ ],
+        "queues" : [ {
+          "arguments" : { },
+          "auto_delete" : false,
+          "durable" : true,
+          "name" : "shared.queue.cloud"
+        } ],
+        "rabbit_version" : "3.7.14"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. getOverview
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /overview
+    {code}
+    *Summary:* Get Overview
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+Overview
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Overview"
+      },
+      "example" : {
+        "churn_rates" : {
+          "channel_closed" : 264850,
+          "channel_closed_details" : {
+            "rate" : 0
+          },
+          "channel_created" : 264851,
+          "channel_created_details" : {
+            "rate" : 0
+          },
+          "connection_closed" : 264852,
+          "connection_closed_details" : {
+            "rate" : 0
+          },
+          "connection_created" : 264851,
+          "connection_created_details" : {
+            "rate" : 0
+          },
+          "queue_created" : 0,
+          "queue_created_details" : {
+            "rate" : 0
+          },
+          "queue_declared" : 3,
+          "queue_declared_details" : {
+            "rate" : 0
+          },
+          "queue_deleted" : 0,
+          "queue_deleted_details" : {
+            "rate" : 0
+          }
+        },
+        "cluster_name" : "rabbit@rabbitmq-cloud-0.rabbitmq-cloud.trumpf.svc.cluster.local",
+        "contexts" : [ {
+          "description" : "RabbitMQ Management",
+          "node" : "rabbit@rabbitmq-cloud-0",
+          "path" : "/",
+          "port" : "15672",
+          "ssl_opts" : [ ]
+        } ],
+        "erlang_full_version" : "Erlang/OTP 21 [erts-10.3.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:128] [hipe]",
+        "erlang_version" : "21.3.7",
+        "exchange_types" : [ {
+          "description" : "AMQP headers exchange, as per the AMQP specification",
+          "enabled" : true,
+          "name" : "headers"
+        } ],
+        "listeners" : [ {
+          "ip_address" : "::",
+          "node" : "rabbit@rabbitmq-cloud-0",
+          "port" : 5672,
+          "protocol" : "amqp",
+          "socket_opts" : {
+            "backlog" : 128,
+            "exit_on_close" : false,
+            "linger" : [ true ],
+            "nodelay" : true
+          }
+        } ],
+        "management_version" : "3.7.14",
+        "message_stats" : {
+          "ack" : 1264822,
+          "ack_details" : {
+            "rate" : 0
+          },
+          "confirm" : 258495,
+          "confirm_details" : {
+            "rate" : 0
+          },
+          "deliver" : 1264822,
+          "deliver_details" : {
+            "rate" : 0
+          },
+          "deliver_get" : 1264846,
+          "deliver_get_details" : {
+            "rate" : 0
+          },
+          "deliver_no_ack" : 0,
+          "deliver_no_ack_details" : {
+            "rate" : 0
+          },
+          "disk_reads" : 0,
+          "disk_reads_details" : {
+            "rate" : 0
+          },
+          "disk_writes" : 1000000,
+          "disk_writes_details" : {
+            "rate" : 0
+          },
+          "get" : 24,
+          "get_details" : {
+            "rate" : 0
+          },
+          "get_no_ack" : 0,
+          "get_no_ack_details" : {
+            "rate" : 0
+          },
+          "publish" : 1247498,
+          "publish_details" : {
+            "rate" : 0
+          },
+          "redeliver" : 24,
+          "redeliver_details" : {
+            "rate" : 0
+          },
+          "return_unroutable" : 0,
+          "return_unroutable_details" : {
+            "rate" : 0
+          }
+        },
+        "node" : "rabbit@rabbitmq-cloud-0",
+        "object_totals" : {
+          "channels" : 1,
+          "connections" : 1,
+          "consumers" : 0,
+          "exchanges" : 16,
+          "queues" : 1
+        },
+        "queue_totals" : {
+          "messages" : 0,
+          "messages_details" : {
+            "rate" : 0
+          },
+          "messages_ready" : 0,
+          "messages_ready_details" : {
+            "rate" : 0
+          },
+          "messages_unacknowledged" : 0,
+          "messages_unacknowledged_details" : {
+            "rate" : 0
+          }
+        },
+        "rabbitmq_version" : "3.7.14",
+        "rates_mode" : "basic",
+        "sample_retention_policies" : {
+          "basic" : [ 600 ],
+          "detailed" : [ 600 ],
+          "global" : [ 600 ]
+        },
+        "statistics_db_event_queue" : 0
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listDefinitions
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /definitions
+    {code}
+    *Summary:* List Definitions
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+Definition
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Definition"
+      },
+      "example" : {
+        "bindings" : [ {
+          "arguments" : { },
+          "destination" : "shared.queue.cloud",
+          "destination_type" : "queue",
+          "routing_key" : "shared.queue.cloud.key",
+          "source" : "shared.exchange",
+          "vhost" : "cloud"
+        } ],
+        "exchanges" : [ {
+          "arguments" : { },
+          "auto_delete" : false,
+          "durable" : true,
+          "internal" : false,
+          "name" : "shared.exchange",
+          "type" : "direct",
+          "vhost" : "cloud"
+        } ],
+        "global_parameters" : [ {
+          "name" : "cluster_name",
+          "value" : "rabbit@rabbitmq-cloud-0.rabbitmq-cloud.trumpf.svc.cluster.local"
+        } ],
+        "parameters" : [ ],
+        "permissions" : [ {
+          "configure" : ".*",
+          "read" : ".*",
+          "user" : "adminuser",
+          "vhost" : "cloud",
+          "write" : ".*"
+        } ],
+        "policies" : [ ],
+        "queues" : [ {
+          "arguments" : { },
+          "auto_delete" : false,
+          "durable" : true,
+          "name" : "shared.queue.cloud",
+          "vhost" : "cloud"
+        } ],
+        "rabbit_version" : "3.7.14",
+        "topic_permissions" : [ {
+          "exchange" : "shared.exchange",
+          "read" : ".*",
+          "user" : "apiuser",
+          "vhost" : "cloud",
+          "write" : ".*"
+        } ],
+        "users" : [ {
+          "hashing_algorithm" : "rabbit_password_hashing_sha256",
+          "name" : "apiuser",
+          "password_hash" : "mVZvOq/iWjeTCvDw8bSZkHUB+w8Z07S/lZwg4e7NcNscLjah",
+          "tags" : "administrator"
+        } ],
+        "vhosts" : [ {
+          "name" : "cloud"
+        } ]
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listUserPermissions
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /users/{user}/permissions
+    {code}
+    *Summary:* List User Permissions
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |user | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[PermissionUser]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/PermissionUser"
+        }
+      },
+      "example" : [ {
+        "configure" : ".*",
+        "read" : ".*",
+        "user" : "apiuser",
+        "vhost" : "/",
+        "write" : ".*"
+      } ]
+    }
+  }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "Object Not Found",
+        "reason" : "Not Found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listUsersTopicPermissions
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /users/{user}/topic-permissions
+    {code}
+    *Summary:* List Users Topic Permissions
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |user | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[PermissionTopic]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/PermissionTopic"
+        }
+      },
+      "example" : [ {
+        "exchange" : "shared.exchange",
+        "read" : ".*",
+        "user" : "apiuser",
+        "vhost" : "cloud",
+        "write" : ".*"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listUsersWithoutPermissions
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /users/without-permissions
+    {code}
+    *Summary:* List Users without Permissions
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[User]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/User"
+        }
+      },
+      "example" : [ {
+        "hashing_algorithm" : "rabbit_password_hashing_sha256",
+        "name" : "flowers",
+        "password_hash" : "tSBI8cXfyjsgfOusC0H640/v6aITQMZ2ZP5eWSHOUtY8sCMl",
+        "tags" : ""
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. consumeMessage
+    {status:colour=Yellow|title=post|subtle=false}
+    {code}
+    post /queues/{vhost}/{queue}/get
+    {code}
+    *Summary:* Consume Message
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+        h5. Body Parameter
+        ||Name||Description||Required||Default||Pattern||
+        |body | |(x) | |  |
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[ConsumeResponse]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/ConsumeResponse"
+        }
+      },
+      "example" : [ {
+        "exchange" : "shared.exchange",
+        "message_count" : 24,
+        "payload" : "my body",
+        "payload_bytes" : 7,
+        "payload_encoding" : "string",
+        "properties" : [ ],
+        "redelivered" : true,
+        "routing_key" : "shared.queue.cloud.key"
+      } ]
+    }
+  }
+}
+        {code}
+        *Status Code:* 401
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "not_authorised",
+        "reason" : "Access refused."
+      }
+    }
+  }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "not_found",
+        "reason" : "NOT_FOUND - no queue 'shared.queue.clouds' in vhost 'cloud'"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. publishMessage
+    {status:colour=Yellow|title=post|subtle=false}
+    {code}
+    post /exchanges/{vhost}/{exchange}/publish
+    {code}
+    *Summary:* Publish Message
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|exchange | |(/) |null |  |
+
+
+        h5. Body Parameter
+        ||Name||Description||Required||Default||Pattern||
+        |body | |(x) | |  |
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+PublishResponse
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/PublishResponse"
+      },
+      "example" : {
+        "routed" : true
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. consumeMessage
+    {status:colour=Yellow|title=post|subtle=false}
+    {code}
+    post /queues/{vhost}/{queue}/get
+    {code}
+    *Summary:* Consume Message
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+        h5. Body Parameter
+        ||Name||Description||Required||Default||Pattern||
+        |body | |(x) | |  |
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[ConsumeResponse]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/ConsumeResponse"
+        }
+      },
+      "example" : [ {
+        "exchange" : "shared.exchange",
+        "message_count" : 24,
+        "payload" : "my body",
+        "payload_bytes" : 7,
+        "payload_encoding" : "string",
+        "properties" : [ ],
+        "redelivered" : true,
+        "routing_key" : "shared.queue.cloud.key"
+      } ]
+    }
+  }
+}
+        {code}
+        *Status Code:* 401
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "not_authorised",
+        "reason" : "Access refused."
+      }
+    }
+  }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "not_found",
+        "reason" : "NOT_FOUND - no queue 'shared.queue.clouds' in vhost 'cloud'"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. createQueue
+    {status:colour=Yellow|title=put|subtle=false}
+    {code}
+    put /queues/{vhost}/{queue}
+    {code}
+    *Summary:* Create Queue
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+        h5. Body Parameter
+        ||Name||Description||Required||Default||Pattern||
+        |body | |(x) | |  |
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 201
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+    ----
+
+    h3. createQueueActions
+    {status:colour=Yellow|title=post|subtle=false}
+    {code}
+    post /queues/{vhost}/{queue}/actions
+    {code}
+    *Summary:* Create Actions for Queue
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+        h5. Body Parameter
+        ||Name||Description||Required||Default||Pattern||
+        |body | |(x) | |  |
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+    ----
+
+    h3. deleteQueue
+    {status:colour=Yellow|title=delete|subtle=false}
+    {code}
+    delete /queues/{vhost}/{queue}
+    {code}
+    *Summary:* Delete Queue
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+
+
+        h5. Query Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |ifEmpty | |(x) |true |  |
+
+|ifUnused | |(x) |true |  |
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "Object Not Found",
+        "reason" : "Not Found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. deleteQueueContents
+    {status:colour=Yellow|title=delete|subtle=false}
+    {code}
+    delete /queues/{vhost}/{queue}/contents
+    {code}
+    *Summary:* Delete Queue Contents (Purge)
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+    ----
+
+    h3. getQueue
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /queues/{vhost}/{queue}
+    {code}
+    *Summary:* Get Queue
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+Queue
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Queue"
+      },
+      "example" : {
+        "arguments" : { },
+        "auto_delete" : false,
+        "backing_queue_status" : {
+          "avg_ack_egress_rate" : 0,
+          "avg_ack_ingress_rate" : 9.472023639246112E-21,
+          "avg_egress_rate" : 9.472023639246112E-21,
+          "avg_ingress_rate" : 0.08336487738719885,
+          "delta" : [ "delta" ],
+          "len" : 57,
+          "mode" : "default",
+          "next_seq_id" : 1264879,
+          "q1" : 0,
+          "q2" : 0,
+          "q3" : 0,
+          "q4" : 57,
+          "target_ram_count" : "infinity"
+        },
+        "consumer_details" : [ ],
+        "consumers" : 0,
+        "deliveries" : [ ],
+        "durable" : true,
+        "effective_policy_definition" : [ ],
+        "exclusive" : false,
+        "garbage_collection" : {
+          "fullsweep_after" : 65535,
+          "max_heap_size" : 0,
+          "min_bin_vheap_size" : 46422,
+          "min_heap_size" : 233,
+          "minor_gcs" : 1264
+        },
+        "idle_since" : "2019-05-10 19:39:01",
+        "incoming" : [ ],
+        "memory" : 50664,
+        "message_bytes" : 399,
+        "message_bytes_paged_out" : 0,
+        "message_bytes_persistent" : 0,
+        "message_bytes_ram" : 399,
+        "message_bytes_ready" : 399,
+        "message_bytes_unacknowledged" : 0,
+        "message_stats" : {
+          "ack" : 1264822,
+          "ack_details" : {
+            "rate" : 0
+          },
+          "deliver" : 1264822,
+          "deliver_details" : {
+            "rate" : 0
+          },
+          "deliver_get" : 1264855,
+          "deliver_get_details" : {
+            "rate" : 0
+          },
+          "deliver_no_ack" : 0,
+          "deliver_no_ack_details" : {
+            "rate" : 0
+          },
+          "get" : 33,
+          "get_details" : {
+            "rate" : 0
+          },
+          "get_no_ack" : 0,
+          "get_no_ack_details" : {
+            "rate" : 0
+          },
+          "publish" : 1246734,
+          "publish_details" : {
+            "rate" : 0
+          },
+          "redeliver" : 32,
+          "redeliver_details" : {
+            "rate" : 0
+          }
+        },
+        "messages" : 57,
+        "messages_details" : {
+          "rate" : 0
+        },
+        "messages_paged_out" : 0,
+        "messages_persistent" : 0,
+        "messages_ram" : 57,
+        "messages_ready" : 57,
+        "messages_ready_details" : {
+          "rate" : 0
+        },
+        "messages_ready_ram" : 57,
+        "messages_unacknowledged" : 0,
+        "messages_unacknowledged_details" : {
+          "rate" : 0
+        },
+        "messages_unacknowledged_ram" : 0,
+        "name" : "shared.queue.cloud",
+        "node" : "rabbit@rabbitmq-cloud-0",
+        "reductions" : 2262604946,
+        "reductions_details" : {
+          "rate" : 0
+        },
+        "state" : "running",
+        "vhost" : "cloud"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listBindingsForQueue
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /queues/{vhost}/{queue}/bindings
+    {code}
+    *Summary:* List All Bindings for Queue
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+|queue | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[Binding]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Binding"
+        }
+      },
+      "example" : [ {
+        "arguments" : { },
+        "destination" : "shared.queue.cloud",
+        "destination_type" : "queue",
+        "properties_key" : "shared.queue.cloud",
+        "routing_key" : "shared.queue.cloud",
+        "source" : "",
+        "vhost" : "cloud"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listQueues
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /queues
+    {code}
+    *Summary:* List Queues
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[Queue]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Queue"
+        }
+      },
+      "example" : [ {
+        "arguments" : { },
+        "auto_delete" : false,
+        "backing_queue_status" : {
+          "avg_ack_egress_rate" : 0,
+          "avg_ack_ingress_rate" : 9.472023639246112E-21,
+          "avg_egress_rate" : 9.472023639246112E-21,
+          "avg_ingress_rate" : 0.08336487738719885,
+          "delta" : [ "delta" ],
+          "len" : 57,
+          "mode" : "default",
+          "next_seq_id" : 1264879,
+          "q1" : 0,
+          "q2" : 0,
+          "q3" : 0,
+          "q4" : 57,
+          "target_ram_count" : "infinity"
+        },
+        "consumers" : 0,
+        "durable" : true,
+        "effective_policy_definition" : [ ],
+        "exclusive" : false,
+        "garbage_collection" : {
+          "fullsweep_after" : 65535,
+          "max_heap_size" : 0,
+          "min_bin_vheap_size" : 46422,
+          "min_heap_size" : 233,
+          "minor_gcs" : 1264
+        },
+        "idle_since" : "2019-05-10 19:39:01",
+        "memory" : 50664,
+        "message_bytes" : 399,
+        "message_bytes_paged_out" : 0,
+        "message_bytes_persistent" : 0,
+        "message_bytes_ram" : 399,
+        "message_bytes_ready" : 399,
+        "message_bytes_unacknowledged" : 0,
+        "message_stats" : {
+          "ack" : 1264822,
+          "ack_details" : {
+            "rate" : 0
+          },
+          "deliver" : 1264822,
+          "deliver_details" : {
+            "rate" : 0
+          },
+          "deliver_get" : 1264855,
+          "deliver_get_details" : {
+            "rate" : 0
+          },
+          "deliver_no_ack" : 0,
+          "deliver_no_ack_details" : {
+            "rate" : 0
+          },
+          "get" : 33,
+          "get_details" : {
+            "rate" : 0
+          },
+          "get_no_ack" : 0,
+          "get_no_ack_details" : {
+            "rate" : 0
+          },
+          "publish" : 1246734,
+          "publish_details" : {
+            "rate" : 0
+          },
+          "redeliver" : 32,
+          "redeliver_details" : {
+            "rate" : 0
+          }
+        },
+        "messages" : 57,
+        "messages_details" : {
+          "rate" : 0
+        },
+        "messages_paged_out" : 0,
+        "messages_persistent" : 0,
+        "messages_ram" : 57,
+        "messages_ready" : 57,
+        "messages_ready_details" : {
+          "rate" : 0
+        },
+        "messages_ready_ram" : 57,
+        "messages_unacknowledged" : 0,
+        "messages_unacknowledged_details" : {
+          "rate" : 0
+        },
+        "messages_unacknowledged_ram" : 0,
+        "name" : "shared.queue.cloud",
+        "node" : "rabbit@rabbitmq-cloud-0",
+        "reductions" : 2262604946,
+        "reductions_details" : {
+          "rate" : 0
+        },
+        "state" : "running",
+        "vhost" : "cloud"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listQueuesForVirtualHost
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /queues/{vhost}
+    {code}
+    *Summary:* List Queues for VHost
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[Queue]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Queue"
+        }
+      },
+      "example" : [ {
+        "arguments" : { },
+        "auto_delete" : false,
+        "backing_queue_status" : {
+          "avg_ack_egress_rate" : 0,
+          "avg_ack_ingress_rate" : 9.472023639246112E-21,
+          "avg_egress_rate" : 9.472023639246112E-21,
+          "avg_ingress_rate" : 0.08336487738719885,
+          "delta" : [ "delta" ],
+          "len" : 57,
+          "mode" : "default",
+          "next_seq_id" : 1264879,
+          "q1" : 0,
+          "q2" : 0,
+          "q3" : 0,
+          "q4" : 57,
+          "target_ram_count" : "infinity"
+        },
+        "consumers" : 0,
+        "durable" : true,
+        "effective_policy_definition" : [ ],
+        "exclusive" : false,
+        "garbage_collection" : {
+          "fullsweep_after" : 65535,
+          "max_heap_size" : 0,
+          "min_bin_vheap_size" : 46422,
+          "min_heap_size" : 233,
+          "minor_gcs" : 1264
+        },
+        "idle_since" : "2019-05-10 19:39:01",
+        "memory" : 50664,
+        "message_bytes" : 399,
+        "message_bytes_paged_out" : 0,
+        "message_bytes_persistent" : 0,
+        "message_bytes_ram" : 399,
+        "message_bytes_ready" : 399,
+        "message_bytes_unacknowledged" : 0,
+        "message_stats" : {
+          "ack" : 1264822,
+          "ack_details" : {
+            "rate" : 0
+          },
+          "deliver" : 1264822,
+          "deliver_details" : {
+            "rate" : 0
+          },
+          "deliver_get" : 1264855,
+          "deliver_get_details" : {
+            "rate" : 0
+          },
+          "deliver_no_ack" : 0,
+          "deliver_no_ack_details" : {
+            "rate" : 0
+          },
+          "get" : 33,
+          "get_details" : {
+            "rate" : 0
+          },
+          "get_no_ack" : 0,
+          "get_no_ack_details" : {
+            "rate" : 0
+          },
+          "publish" : 1246734,
+          "publish_details" : {
+            "rate" : 0
+          },
+          "redeliver" : 32,
+          "redeliver_details" : {
+            "rate" : 0
+          }
+        },
+        "messages" : 57,
+        "messages_details" : {
+          "rate" : 0
+        },
+        "messages_paged_out" : 0,
+        "messages_persistent" : 0,
+        "messages_ram" : 57,
+        "messages_ready" : 57,
+        "messages_ready_details" : {
+          "rate" : 0
+        },
+        "messages_ready_ram" : 57,
+        "messages_unacknowledged" : 0,
+        "messages_unacknowledged_details" : {
+          "rate" : 0
+        },
+        "messages_unacknowledged_ram" : 0,
+        "name" : "shared.queue.cloud",
+        "node" : "rabbit@rabbitmq-cloud-0",
+        "reductions" : 2262604946,
+        "reductions_details" : {
+          "rate" : 0
+        },
+        "state" : "running",
+        "vhost" : "cloud"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. createUser
+    {status:colour=Yellow|title=put|subtle=false}
+    {code}
+    put /users/{name}
+    {code}
+    *Summary:* Create User
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |name | |(/) |null |  |
+
+
+        h5. Body Parameter
+        ||Name||Description||Required||Default||Pattern||
+        |body | |(x) | |  |
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 201
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+    ----
+
+    h3. deleteUser
+    {status:colour=Yellow|title=delete|subtle=false}
+    {code}
+    delete /users/{name}
+    {code}
+    *Summary:* Delete User
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |name | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "Object Not Found",
+        "reason" : "Not Found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. getUser
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /users/{name}
+    {code}
+    *Summary:* Get User
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |name | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+User
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/User"
+      },
+      "example" : {
+        "hashing_algorithm" : "rabbit_password_hashing_sha256",
+        "name" : "apiuser",
+        "password_hash" : "mVZvOq/iWjeTCvDw8bSZkHUB+w8Z07S/lZwg4e7NcNscLjah",
+        "tags" : "administrator"
+      }
+    }
+  }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "Object Not Found",
+        "reason" : "Not Found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. getUserCurrent
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /whoami
+    {code}
+    *Summary:* Get Current User
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+WhoAmI
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/WhoAmI"
+      },
+      "example" : {
+        "name" : "apiuser",
+        "tags" : "administrator"
+      }
+    }
+  }
+}
+        {code}
+        *Status Code:* 401
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listUserPermissions
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /users/{user}/permissions
+    {code}
+    *Summary:* List User Permissions
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |user | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[PermissionUser]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/PermissionUser"
+        }
+      },
+      "example" : [ {
+        "configure" : ".*",
+        "read" : ".*",
+        "user" : "apiuser",
+        "vhost" : "/",
+        "write" : ".*"
+      } ]
+    }
+  }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "Object Not Found",
+        "reason" : "Not Found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listUsers
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /users
+    {code}
+    *Summary:* List Users
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[PermissionUser]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/PermissionUser"
+        }
+      },
+      "example" : [ {
+        "hashing_algorithm" : "rabbit_password_hashing_sha256",
+        "name" : "adminuser",
+        "password_hash" : "masEFKl4ejfIv1DHb1WQ9jFYe9fKx6PqIAf/BxSU6k9NlXtQ",
+        "tags" : "administrator"
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listUsersWithoutPermissions
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /users/without-permissions
+    {code}
+    *Summary:* List Users without Permissions
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[User]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/User"
+        }
+      },
+      "example" : [ {
+        "hashing_algorithm" : "rabbit_password_hashing_sha256",
+        "name" : "flowers",
+        "password_hash" : "tSBI8cXfyjsgfOusC0H640/v6aITQMZ2ZP5eWSHOUtY8sCMl",
+        "tags" : ""
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. createDefinitionsForVirtualHost
+    {status:colour=Yellow|title=post|subtle=false}
+    {code}
+    post /definitions/{vhost}
+    {code}
+    *Summary:* Create Definitions for VHost
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+
+        h5. Body Parameter
+        ||Name||Description||Required||Default||Pattern||
+        |body | |(x) | |  |
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 400
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "bad_request",
+        "reason" : "vhost_not_found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. createVirtualHost
+    {status:colour=Yellow|title=put|subtle=false}
+    {code}
+    put /vhosts/{vhost}
+    {code}
+    *Summary:* Create VHost
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 201
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+    ----
+
+    h3. deleteVirtualHost
+    {status:colour=Yellow|title=delete|subtle=false}
+    {code}
+    delete /vhosts/{vhost}
+    {code}
+    *Summary:* Delete VHost
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 204
+        *Message:*     
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : { }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "Object Not Found",
+        "reason" : "Not Found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. getDefinitionsForVirtualHost
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /definitions/{vhost}
+    {code}
+    *Summary:* Get Definitions for VHost
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+Definition
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "headers" : {
+    "Content-Security-Policy" : {
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "Vary" : {
+      "schema" : {
+        "type" : "string"
+      }
+    }
+  },
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/Definition"
+      },
+      "example" : {
+        "bindings" : [ {
+          "arguments" : { },
+          "destination" : "shared.queue.cloud",
+          "destination_type" : "queue",
+          "routing_key" : "shared.queue.cloud.key",
+          "source" : "shared.exchange"
+        } ],
+        "exchanges" : [ {
+          "arguments" : { },
+          "auto_delete" : false,
+          "durable" : true,
+          "internal" : false,
+          "name" : "shared.exchange",
+          "type" : "direct"
+        } ],
+        "parameters" : [ ],
+        "policies" : [ ],
+        "queues" : [ {
+          "arguments" : { },
+          "auto_delete" : false,
+          "durable" : true,
+          "name" : "shared.queue.cloud"
+        } ],
+        "rabbit_version" : "3.7.14"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. getVirtualHost
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /vhosts/{vhost}
+    {code}
+    *Summary:* Read VHost
+    *Description:* 
+
+
+    h4. Parameters
+        h5. Path Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |vhost | |(/) |null |  |
+
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+VHost
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/VHost"
+      },
+      "example" : {
+        "message_stats" : {
+          "ack" : 1264822,
+          "ack_details" : {
+            "rate" : 0
+          },
+          "confirm" : 258525,
+          "confirm_details" : {
+            "rate" : 0
+          },
+          "deliver" : 1264822,
+          "deliver_details" : {
+            "rate" : 0
+          },
+          "deliver_get" : 1264850,
+          "deliver_get_details" : {
+            "rate" : 0
+          },
+          "deliver_no_ack" : 0,
+          "deliver_no_ack_details" : {
+            "rate" : 0
+          },
+          "get" : 28,
+          "get_details" : {
+            "rate" : 0
+          },
+          "get_no_ack" : 0,
+          "get_no_ack_details" : {
+            "rate" : 0
+          },
+          "publish" : 1247528,
+          "publish_details" : {
+            "rate" : 0
+          },
+          "redeliver" : 27,
+          "redeliver_details" : {
+            "rate" : 0
+          },
+          "return_unroutable" : 7,
+          "return_unroutable_details" : {
+            "rate" : 0
+          }
+        },
+        "messages" : 25,
+        "messages_details" : {
+          "rate" : 0
+        },
+        "messages_ready" : 25,
+        "messages_ready_details" : {
+          "rate" : 0
+        },
+        "messages_unacknowledged" : 0,
+        "messages_unacknowledged_details" : {
+          "rate" : 0
+        },
+        "name" : "cloud",
+        "recv_oct" : 178988418,
+        "recv_oct_details" : {
+          "rate" : 1.6
+        },
+        "send_oct" : 274962337,
+        "send_oct_details" : {
+          "rate" : 1.6
+        },
+        "tracing" : false
+      }
+    }
+  }
+}
+        {code}
+        *Status Code:* 400
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      }
+    }
+  }
+}
+        {code}
+        *Status Code:* 401
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "not_authorised",
+        "reason" : "Login failed"
+      }
+    }
+  }
+}
+        {code}
+        *Status Code:* 403
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      }
+    }
+  }
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     
+        {code:title=Response Type}
+ErrorMessage
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "$ref" : "#/components/schemas/ErrorMessage"
+      },
+      "example" : {
+        "error" : "Object Not Found",
+        "reason" : "Not Found"
+      }
+    }
+  }
+}
+        {code}
+    ----
+
+    h3. listVirtualHosts
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /vhosts
+    {code}
+    *Summary:* List VHosts
+    *Description:* 
+
+
+    h4. Parameters
+
+
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     
+        {code:title=Response Type}
+array[VHost]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "",
+  "content" : {
+    "application/json" : {
+      "schema" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/VHost"
+        }
+      },
+      "example" : [ {
+        "cluster_state" : {
+          "rabbit@rabbitmq-cloud-0" : "running"
+        },
+        "name" : "/",
+        "tracing" : false
+      } ]
+    }
+  }
+}
+        {code}
+    ----
+
+h2. Models
+
+        h3. Binding
+        ||Field Name||Required||Type||Description||
+         |arguments | |BindingRequest_arguments | |
+ |destination | |String | |
+ |destinationUnderscoretype | |String | |
+ |propertiesUnderscorekey | |String | |
+ |routingUnderscorekey | |String | |
+ |source | |String | |
+ |vhost | |String | |
+        h3. BindingRequest
+        ||Field Name||Required||Type||Description||
+         |routingUnderscorekey | |String | |
+ |arguments | |BindingRequest_arguments | |
+        h3. BindingRequestArguments
+        ||Field Name||Required||Type||Description||
+         |xMinusarg | |String | |
+        h3. ClusterName
+        ||Field Name||Required||Type||Description||
+         |name | |String | |
+        h3. ConsumeRequest
+        ||Field Name||Required||Type||Description||
+         |count | |Integer | |
+ |ackmode | |String | |
+ |encoding | |String | |
+ |truncate | |Integer | |
+        h3. ConsumeResponse
+        ||Field Name||Required||Type||Description||
+         |exchange | |String | |
+ |messageUnderscorecount | |Integer | |
+ |payload | |String | |
+ |payloadUnderscorebytes | |Integer | |
+ |payloadUnderscoreencoding | |String | |
+ |properties | |array[MessageProperties] | |
+ |redelivered | |Boolean | |
+ |routingUnderscorekey | |String | |
+        h3. Definition
+        ||Field Name||Required||Type||Description||
+         |bindings | |array[Binding] | |
+ |exchanges | |array[Exchange] | |
+ |parameters | |array[Object] | |
+ |policies | |array[Object] | |
+ |queues | |array[Queue] | |
+ |rabbitUnderscoreversion | |String | |
+        h3. ErrorMessage
+        ||Field Name||Required||Type||Description||
+         |error | |String | |
+ |reason | |String | |
+        h3. Exchange
+        ||Field Name||Required||Type||Description||
+         |arguments | |BindingRequest_arguments | |
+ |autoUnderscoredelete | |Boolean | |
+ |durable | |Boolean | |
+ |incoming | |array[Object] | |
+ |internal | |Boolean | |
+ |messageUnderscorestats | |Exchange_message_stats | |
+ |name | |String | |
+ |outgoing | |array[Object] | |
+ |type | |String | |
+ |userUnderscorewhoUnderscoreperformedUnderscoreaction | |String | |
+ |vhost | |String | |
+        h3. ExchangeMessageStats
+        ||Field Name||Required||Type||Description||
+         |publishUnderscoreinUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |publishUnderscoreoutUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |publishUnderscorein | |Integer | |
+ |publishUnderscoreout | |Integer | |
+        h3. ExchangeMessageStatsPublishInDetails
+        ||Field Name||Required||Type||Description||
+         |rate | |Integer | |
+        h3. ExchangeRequest
+        ||Field Name||Required||Type||Description||
+         |type | |String | |
+ |autoUnderscoredelete | |Boolean | |
+ |durable | |Boolean | |
+ |internal | |Boolean | |
+ |arguments | |BindingRequest_arguments | |
+        h3. InlineResponse404
+        ||Field Name||Required||Type||Description||
+         |reason | |String | |
+ |error | |String | |
+        h3. MessageHeader
+        ||Field Name||Required||Type||Description||
+         |name | |String | |
+        h3. MessageProperties
+        ||Field Name||Required||Type||Description||
+         |applicationUnderscoreid | |String | |
+ |correlationUnderscoreid | |String | |
+ |messageUnderscoreid | |String | |
+ |userUnderscoreid | |String | |
+ |timestamp | |Integer | |
+ |contentUnderscoretype | |String | |
+ |deliveryUnderscoremode | |Integer | |
+ |priority | |Integer | |
+ |clusterUnderscoreid | |String | |
+ |headers | |array[MessageHeader] | |
+        h3. Overview
+        ||Field Name||Required||Type||Description||
+         |churnUnderscorerates | |Overview_churn_rates | |
+ |clusterUnderscorename | |String | |
+ |contexts | |array[Overview_contexts] | |
+ |erlangUnderscorefullUnderscoreversion | |String | |
+ |erlangUnderscoreversion | |String | |
+ |exchangeUnderscoretypes | |array[Overview_exchange_types] | |
+ |listeners | |array[Overview_listeners] | |
+ |managementUnderscoreversion | |String | |
+ |messageUnderscorestats | |Overview_message_stats | |
+ |node | |String | |
+ |objectUnderscoretotals | |Overview_object_totals | |
+ |queueUnderscoretotals | |Overview_queue_totals | |
+ |rabbitmqUnderscoreversion | |String | |
+ |ratesUnderscoremode | |String | |
+ |sampleUnderscoreretentionUnderscorepolicies | |Overview_sample_retention_policies | |
+ |statisticsUnderscoredbUnderscoreeventUnderscorequeue | |Integer | |
+        h3. OverviewChurnRates
+        ||Field Name||Required||Type||Description||
+         |queueUnderscoredeleted | |Integer | |
+ |channelUnderscorecreatedUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |channelUnderscorecreated | |Integer | |
+ |channelUnderscoreclosed | |Integer | |
+ |queueUnderscoredeclaredUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |connectionUnderscoreclosed | |Integer | |
+ |channelUnderscoreclosedUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |queueUnderscorecreated | |Integer | |
+ |queueUnderscoredeclared | |Integer | |
+ |connectionUnderscoreclosedUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |queueUnderscoredeletedUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |connectionUnderscorecreated | |Integer | |
+ |connectionUnderscorecreatedUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |queueUnderscorecreatedUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+        h3. OverviewContexts
+        ||Field Name||Required||Type||Description||
+         |node | |String | |
+ |path | |String | |
+ |port | |String | |
+ |description | |String | |
+ |sslUnderscoreopts | |array[Object] | |
+        h3. OverviewExchangeTypes
+        ||Field Name||Required||Type||Description||
+         |internalUnderscorepurpose | |String | |
+ |name | |String | |
+ |description | |String | |
+ |enabled | |Boolean | |
+        h3. OverviewListeners
+        ||Field Name||Required||Type||Description||
+         |node | |String | |
+ |protocol | |String | |
+ |socketUnderscoreopts | |Overview_socket_opts | |
+ |port | |Integer | |
+ |ipUnderscoreaddress | |String | |
+        h3. OverviewMessageStats
+        ||Field Name||Required||Type||Description||
+         |diskUnderscorereadsUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |getUnderscorenoUnderscoreackUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscorenoUnderscoreack | |Integer | |
+ |publishUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |redeliverUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |confirmUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |ack | |Integer | |
+ |deliver | |Integer | |
+ |deliverUnderscoreget | |Integer | |
+ |diskUnderscorereads | |Integer | |
+ |redeliver | |Integer | |
+ |returnUnderscoreunroutable | |Integer | |
+ |confirm | |Integer | |
+ |getUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscoregetUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscorenoUnderscoreackUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |getUnderscorenoUnderscoreack | |Integer | |
+ |returnUnderscoreunroutableUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |get | |Integer | |
+ |publish | |Integer | |
+ |ackUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |diskUnderscorewrites | |Integer | |
+ |diskUnderscorewritesUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+        h3. OverviewObjectTotals
+        ||Field Name||Required||Type||Description||
+         |channels | |Integer | |
+ |queues | |Integer | |
+ |exchanges | |Integer | |
+ |consumers | |Integer | |
+ |connections | |Integer | |
+        h3. OverviewQueueTotals
+        ||Field Name||Required||Type||Description||
+         |messagesUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |messagesUnderscoreunacknowledgedUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |messages | |Integer | |
+ |messagesUnderscorereadyUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |messagesUnderscoreready | |Integer | |
+ |messagesUnderscoreunacknowledged | |Integer | |
+        h3. OverviewSampleRetentionPolicies
+        ||Field Name||Required||Type||Description||
+         |detailed | |array[Integer] | |
+ |global | |array[Integer] | |
+ |basic | |array[Integer] | |
+        h3. OverviewSocketOpts
+        ||Field Name||Required||Type||Description||
+         |backlog | |Integer | |
+ |connectionUnderscoretype | |String | |
+ |linger | |array[Integer] | |
+ |port | |Integer | |
+ |exitUnderscoreonUnderscoreclose | |Boolean | |
+ |nodelay | |Boolean | |
+        h3. PermissionTopic
+        ||Field Name||Required||Type||Description||
+         |exchange | |String | |
+ |read | |String | |
+ |user | |String | |
+ |vhost | |String | |
+ |write | |String | |
+        h3. PermissionUser
+        ||Field Name||Required||Type||Description||
+         |configure | |String | |
+ |read | |String | |
+ |user | |String | |
+ |vhost | |String | |
+ |write | |String | |
+        h3. PublishRequest
+        ||Field Name||Required||Type||Description||
+         |routingUnderscorekey | |String | |
+ |payload | |String | |
+ |payloadUnderscoreencoding | |String | |
+ |properties | |MessageProperties | |
+        h3. PublishResponse
+        ||Field Name||Required||Type||Description||
+         |routed | |Boolean | |
+        h3. Queue
+        ||Field Name||Required||Type||Description||
+         |arguments | |BindingRequest_arguments | |
+ |autoUnderscoredelete | |Boolean | |
+ |backingUnderscorequeueUnderscorestatus | |Queue_backing_queue_status | |
+ |consumerUnderscoredetails | |array[Object] | |
+ |consumers | |Integer | |
+ |deliveries | |array[Object] | |
+ |durable | |Boolean | |
+ |effectiveUnderscorepolicyUnderscoredefinition | |array[Object] | |
+ |exclusive | |Boolean | |
+ |garbageUnderscorecollection | |Queue_garbage_collection | |
+ |idleUnderscoresince | |String | |
+ |incoming | |array[Object] | |
+ |memory | |Integer | |
+ |messageUnderscorebytes | |Integer | |
+ |messageUnderscorebytesUnderscorepagedUnderscoreout | |Integer | |
+ |messageUnderscorebytesUnderscorepersistent | |Integer | |
+ |messageUnderscorebytesUnderscoreram | |Integer | |
+ |messageUnderscorebytesUnderscoreready | |Integer | |
+ |messageUnderscorebytesUnderscoreunacknowledged | |Integer | |
+ |messageUnderscorestats | |Queue_message_stats | |
+ |messages | |Integer | |
+ |messagesUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |messagesUnderscorepagedUnderscoreout | |Integer | |
+ |messagesUnderscorepersistent | |Integer | |
+ |messagesUnderscoreram | |Integer | |
+ |messagesUnderscoreready | |Integer | |
+ |messagesUnderscorereadyUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |messagesUnderscorereadyUnderscoreram | |Integer | |
+ |messagesUnderscoreunacknowledged | |Integer | |
+ |messagesUnderscoreunacknowledgedUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |messagesUnderscoreunacknowledgedUnderscoreram | |Integer | |
+ |name | |String | |
+ |node | |String | |
+ |reductions | |Integer | |
+ |reductionsUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |state | |String | |
+ |vhost | |String | |
+        h3. QueueAction
+        ||Field Name||Required||Type||Description||
+         |action | |String | |
+        h3. QueueBackingQueueStatus
+        ||Field Name||Required||Type||Description||
+         |q1 | |Integer | |
+ |q2 | |Integer | |
+ |q3 | |Integer | |
+ |q4 | |Integer | |
+ |targetUnderscoreramUnderscorecount | |String | |
+ |delta | |array[String] | |
+ |nextUnderscoreseqUnderscoreid | |Integer | |
+ |avgUnderscoreingressUnderscorerate | |BigDecimal | |
+ |avgUnderscoreackUnderscoreingressUnderscorerate | |BigDecimal | |
+ |avgUnderscoreegressUnderscorerate | |BigDecimal | |
+ |mode | |String | |
+ |len | |Integer | |
+ |avgUnderscoreackUnderscoreegressUnderscorerate | |Integer | |
+        h3. QueueGarbageCollection
+        ||Field Name||Required||Type||Description||
+         |maxUnderscoreheapUnderscoresize | |Integer | |
+ |minorUnderscoregcs | |Integer | |
+ |minUnderscorebinUnderscorevheapUnderscoresize | |Integer | |
+ |minUnderscoreheapUnderscoresize | |Integer | |
+ |fullsweepUnderscoreafter | |Integer | |
+        h3. QueueMessageStats
+        ||Field Name||Required||Type||Description||
+         |getUnderscorenoUnderscoreackUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscorenoUnderscoreack | |Integer | |
+ |publishUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |redeliverUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |ack | |Integer | |
+ |deliver | |Integer | |
+ |deliverUnderscoreget | |Integer | |
+ |redeliver | |Integer | |
+ |getUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscoregetUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscorenoUnderscoreackUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |getUnderscorenoUnderscoreack | |Integer | |
+ |deliverUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |get | |Integer | |
+ |publish | |Integer | |
+ |ackUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+        h3. QueueRequest
+        ||Field Name||Required||Type||Description||
+         |autoUnderscoredelete | |Boolean | |
+ |durable | |Boolean | |
+ |arguments | |BindingRequest_arguments | |
+        h3. User
+        ||Field Name||Required||Type||Description||
+         |hashingUnderscorealgorithm | |String | |
+ |name | |String | |
+ |passwordUnderscorehash | |String | |
+ |tags | |String | |
+        h3. UserRequest
+        ||Field Name||Required||Type||Description||
+         |password | |String | |
+ |tags | |String | |
+        h3. VHost
+        ||Field Name||Required||Type||Description||
+         |messageUnderscorestats | |VHost_message_stats | |
+ |messages | |Integer | |
+ |messagesUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |messagesUnderscoreready | |Integer | |
+ |messagesUnderscorereadyUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |messagesUnderscoreunacknowledged | |Integer | |
+ |messagesUnderscoreunacknowledgedUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |name | |String | |
+ |recvUnderscoreoct | |Integer | |
+ |recvUnderscoreoctUnderscoredetails | |VHost_recv_oct_details | |
+ |sendUnderscoreoct | |Integer | |
+ |sendUnderscoreoctUnderscoredetails | |VHost_recv_oct_details | |
+ |tracing | |Boolean | |
+        h3. VHostMessageStats
+        ||Field Name||Required||Type||Description||
+         |getUnderscorenoUnderscoreackUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscorenoUnderscoreack | |Integer | |
+ |publishUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |redeliverUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |confirmUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |ack | |Integer | |
+ |deliver | |Integer | |
+ |deliverUnderscoreget | |Integer | |
+ |redeliver | |Integer | |
+ |returnUnderscoreunroutable | |Integer | |
+ |confirm | |Integer | |
+ |getUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscoregetUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscorenoUnderscoreackUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |getUnderscorenoUnderscoreack | |Integer | |
+ |returnUnderscoreunroutableUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |deliverUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+ |get | |Integer | |
+ |publish | |Integer | |
+ |ackUnderscoredetails | |Exchange_message_stats_publish_in_details | |
+        h3. VHostRecvOctDetails
+        ||Field Name||Required||Type||Description||
+         |rate | |BigDecimal | |
+        h3. WhoAmI
+        ||Field Name||Required||Type||Description||
+         |name | |String | |
+ |tags | |String | |

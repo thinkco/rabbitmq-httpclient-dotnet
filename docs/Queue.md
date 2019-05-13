@@ -1,0 +1,45 @@
+# Thinkcode.RabbitMQ.OpenAPI.Model.Queue
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Arguments** | [**BindingRequestArguments**](BindingRequestArguments.md) |  | [optional] 
+**AutoDelete** | **bool** |  | [optional] 
+**BackingQueueStatus** | [**QueueBackingQueueStatus**](QueueBackingQueueStatus.md) |  | [optional] 
+**ConsumerDetails** | **Collection&lt;Object&gt;** |  | [optional] 
+**Consumers** | **int** |  | [optional] 
+**Deliveries** | **Collection&lt;Object&gt;** |  | [optional] 
+**Durable** | **bool** |  | [optional] 
+**EffectivePolicyDefinition** | **Collection&lt;Object&gt;** |  | [optional] 
+**Exclusive** | **bool** |  | [optional] 
+**GarbageCollection** | [**QueueGarbageCollection**](QueueGarbageCollection.md) |  | [optional] 
+**IdleSince** | **string** |  | [optional] 
+**Incoming** | **Collection&lt;Object&gt;** |  | [optional] 
+**Memory** | **int** |  | [optional] 
+**MessageBytes** | **int** |  | [optional] 
+**MessageBytesPagedOut** | **int** |  | [optional] 
+**MessageBytesPersistent** | **int** |  | [optional] 
+**MessageBytesRam** | **int** |  | [optional] 
+**MessageBytesReady** | **int** |  | [optional] 
+**MessageBytesUnacknowledged** | **int** |  | [optional] 
+**MessageStats** | [**QueueMessageStats**](QueueMessageStats.md) |  | [optional] 
+**Messages** | **int** |  | [optional] 
+**MessagesDetails** | [**ExchangeMessageStatsPublishInDetails**](ExchangeMessageStatsPublishInDetails.md) |  | [optional] 
+**MessagesPagedOut** | **int** |  | [optional] 
+**MessagesPersistent** | **int** |  | [optional] 
+**MessagesRam** | **int** |  | [optional] 
+**MessagesReady** | **int** |  | [optional] 
+**MessagesReadyDetails** | [**ExchangeMessageStatsPublishInDetails**](ExchangeMessageStatsPublishInDetails.md) |  | [optional] 
+**MessagesReadyRam** | **int** |  | [optional] 
+**MessagesUnacknowledged** | **int** |  | [optional] 
+**MessagesUnacknowledgedDetails** | [**ExchangeMessageStatsPublishInDetails**](ExchangeMessageStatsPublishInDetails.md) |  | [optional] 
+**MessagesUnacknowledgedRam** | **int** |  | [optional] 
+**Name** | **string** |  | [optional] 
+**Node** | **string** |  | [optional] 
+**Reductions** | **int** |  | [optional] 
+**ReductionsDetails** | [**ExchangeMessageStatsPublishInDetails**](ExchangeMessageStatsPublishInDetails.md) |  | [optional] 
+**State** | **string** |  | [optional] 
+**Vhost** | **string** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
