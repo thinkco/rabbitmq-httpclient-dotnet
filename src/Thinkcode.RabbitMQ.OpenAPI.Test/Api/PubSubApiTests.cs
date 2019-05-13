@@ -33,10 +33,23 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
     public class PubSubApiTests : IDisposable
     {
         private PubSubApi instance;
+        private const string userName = "testuser";
+        private const string userPass = "testpass";
+        private const string basePath = "https://mb1.bus.adaptive.me/rabbitmq/api";
+        private const string vhost = "test";
+        private const string exchange = "shared.exchange";
+        private const string queue = "shared.queue";
+        private const string routingKey = "shared.key";
 
         public PubSubApiTests()
         {
-            instance = new PubSubApi();
+            var configuration = new Configuration()
+            {
+                Username = userName,
+                Password = userPass,
+                BasePath = basePath
+            };
+            instance = new PubSubApi(configuration);
         }
 
         public void Dispose()
@@ -61,12 +74,16 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
         [Fact]
         public void ConsumeMessageTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string vhost = null;
-            //string queue = null;
-            //ConsumeRequest body = null;
-            //var response = instance.ConsumeMessage(vhost, queue, body);
-            //Assert.IsType<ICollection<ConsumeResponse>> (response, "response is ICollection<ConsumeResponse>");
+
+
+            var body = new ConsumeRequest();
+            body.Ackmode = "ack_requeue_true"; // ack_requeue_true = read, don't consume - ack_requeue_false, read & consume
+            body.Count = 10; // Number of messages to read
+            body.Encoding = "auto";
+            body.Truncate = 50000;
+
+            var response = instance.ConsumeMessage(vhost, queue, body);
+            Assert.NotNull(response);
         }
         
         /// <summary>
@@ -75,14 +92,37 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
         [Fact]
         public void PublishMessageTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string vhost = null;
-            //string exchange = null;
-            //PublishRequest body = null;
-            //var response = instance.PublishMessage(vhost, exchange, body);
-            //Assert.IsType<PublishResponse> (response, "response is PublishResponse");
+            var body = new PublishRequest();
+            body.PayloadEncoding = "string";
+            body.RoutingKey = routingKey;
+            body.Payload = "Some message";
+            body.Properties = new MessageProperties();
+
+            var response = instance.PublishMessage(vhost, exchange, body);
+            Assert.NotNull(response);
+            Assert.True(response.Routed);
         }
-        
+
+        [Fact]
+        public void PublishMessageWithPropertiesTest()
+        {
+            var body = new PublishRequest();
+            body.PayloadEncoding = "string";
+            body.RoutingKey = routingKey;
+            body.Payload = "Some message";
+            body.Properties = new MessageProperties();
+            body.Properties.ApplicationId = "ApplicationId";
+            body.Properties.CorrelationId = "CorrelationId";
+            body.Properties.MessageId = "MessageId";
+            body.Properties.UserId = userName;
+            body.Properties.DeliveryMode = 1;
+            body.Properties.Headers = new Collection<MessageHeader>();
+
+            var response = instance.PublishMessage(vhost, exchange, body);
+            Assert.NotNull(response);
+            Assert.True(response.Routed);
+        }
+
     }
 
 }
