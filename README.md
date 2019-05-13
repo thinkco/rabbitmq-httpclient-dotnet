@@ -206,3 +206,8 @@ Class | Method | HTTP request | Description
 
 - **Type**: HTTP basic authentication
 
+---
+Brought to you by Thinkco.de!
+
+![ThinkCode](https://avatars2.githubusercontent.com/u/31565447?s=200) 
+
