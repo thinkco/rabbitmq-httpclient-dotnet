@@ -61,20 +61,20 @@ namespace Example
         {
 
             // Configure HTTP basic authorization: basic_auth
-            Configuration.Default.Username = "YOUR_USERNAME";
-            Configuration.Default.Password = "YOUR_PASSWORD";
-            Configuration.Default.BasePath = "http://YOUR_HOST/api"
-
-            var apiInstance = new BindingsApi();
-            var vhost = vhost_example;  // string | 
-            var exchange = exchange_example;  // string | 
-            var queue = queue_example;  // string | 
-            var body = new BindingRequest(); // BindingRequest |  (optional) 
-
+            var configuration = new Configuration() {
+                Username = "YOUR_USERNAME",
+                Password = "YOUR_PASSWORD",                
+                BasePath = "http://YOUR_HOST/api"
+            };
+            
+            // Apply configuration to API
+            var userApi = new UsersApi(configuration);
+            
             try
             {
-                // Create Bindings for Queue
-                apiInstance.CreateBindingsForQueueExchange(vhost, exchange, queue, body);
+                // Check you're connected and your user
+                var whoami = userApi.GetUserCurrent()
+                Console.WriteLine(whoami);
             }
             catch (Exception e)
             {
