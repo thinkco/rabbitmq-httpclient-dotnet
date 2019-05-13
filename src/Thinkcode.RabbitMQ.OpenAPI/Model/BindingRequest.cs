@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,7 +28,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// BindingRequest
     /// </summary>
     [DataContract]
-    public partial class BindingRequest :  IEquatable<BindingRequest>, IValidatableObject
+    public partial class BindingRequest :  IEquatable<BindingRequest>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BindingRequest" /> class.
@@ -141,15 +140,6 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
-        }
     }
 
 }

@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,7 +28,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// QueueBackingQueueStatus
     /// </summary>
     [DataContract]
-    public partial class QueueBackingQueueStatus :  IEquatable<QueueBackingQueueStatus>, IValidatableObject
+    public partial class QueueBackingQueueStatus :  IEquatable<QueueBackingQueueStatus>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QueueBackingQueueStatus" /> class.
@@ -47,7 +46,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="mode">mode.</param>
         /// <param name="len">len.</param>
         /// <param name="avgAckEgressRate">avgAckEgressRate.</param>
-        public QueueBackingQueueStatus(int q1 = default(int), int q2 = default(int), int q3 = default(int), int q4 = default(int), string targetRamCount = default(string), Collection<string> delta = default(Collection<string>), int nextSeqId = default(int), decimal avgIngressRate = default(decimal), decimal avgAckIngressRate = default(decimal), decimal avgEgressRate = default(decimal), string mode = default(string), int len = default(int), int avgAckEgressRate = default(int))
+        public QueueBackingQueueStatus(int q1 = default(int), int q2 = default(int), int q3 = default(int), int q4 = default(int), string targetRamCount = default(string), List<string> delta = default(List<string>), int nextSeqId = default(int), decimal avgIngressRate = default(decimal), decimal avgAckIngressRate = default(decimal), decimal avgEgressRate = default(decimal), string mode = default(string), int len = default(int), int avgAckEgressRate = default(int))
         {
             this.Q1 = q1;
             this.Q2 = q2;
@@ -98,7 +97,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Delta
         /// </summary>
         [DataMember(Name="delta", EmitDefaultValue=false)]
-        public Collection<string> Delta { get; set; }
+        public List<string> Delta { get; set; }
 
         /// <summary>
         /// Gets or Sets NextSeqId
@@ -303,15 +302,6 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
-        }
     }
 
 }

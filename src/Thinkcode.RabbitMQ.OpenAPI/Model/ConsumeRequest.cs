@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,64 +28,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// ConsumeRequest
     /// </summary>
     [DataContract]
-    public partial class ConsumeRequest :  IEquatable<ConsumeRequest>, IValidatableObject
+    public partial class ConsumeRequest :  IEquatable<ConsumeRequest>
     {
-        /// <summary>
-        /// Defines Ackmode
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AckmodeEnum
-        {
-            /// <summary>
-            /// Enum True for value: ack_requeue_true
-            /// </summary>
-            [EnumMember(Value = "ack_requeue_true")]
-            True = 1,
-
-            /// <summary>
-            /// Enum False for value: ack_requeue_false
-            /// </summary>
-            [EnumMember(Value = "ack_requeue_false")]
-            False = 2
-
-        }
-
-        /// <summary>
-        /// Gets or Sets Ackmode
-        /// </summary>
-        [DataMember(Name="ackmode", EmitDefaultValue=false)]
-        public AckmodeEnum Ackmode { get; set; }
-        /// <summary>
-        /// Defines Encoding
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EncodingEnum
-        {
-            /// <summary>
-            /// Enum String for value: string
-            /// </summary>
-            [EnumMember(Value = "string")]
-            String = 1,
-
-            /// <summary>
-            /// Enum Base64 for value: base64
-            /// </summary>
-            [EnumMember(Value = "base64")]
-            Base64 = 2,
-
-            /// <summary>
-            /// Enum Auto for value: auto
-            /// </summary>
-            [EnumMember(Value = "auto")]
-            Auto = 3
-
-        }
-
-        /// <summary>
-        /// Gets or Sets Encoding
-        /// </summary>
-        [DataMember(Name="encoding", EmitDefaultValue=false)]
-        public EncodingEnum Encoding { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsumeRequest" /> class.
         /// </summary>
@@ -96,10 +39,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Initializes a new instance of the <see cref="ConsumeRequest" /> class.
         /// </summary>
         /// <param name="count">count (required).</param>
-        /// <param name="ackmode">ackmode (required) (default to AckmodeEnum.False).</param>
-        /// <param name="encoding">encoding (required) (default to EncodingEnum.String).</param>
+        /// <param name="ackmode">ackmode (required) (default to &quot;ack_requeue_true&quot;).</param>
+        /// <param name="encoding">encoding (required) (default to &quot;string&quot;).</param>
         /// <param name="truncate">truncate (required).</param>
-        public ConsumeRequest(int count = default(int), AckmodeEnum ackmode = AckmodeEnum.False, EncodingEnum encoding = EncodingEnum.String, int truncate = default(int))
+        public ConsumeRequest(int count = default(int), string ackmode = "ack_requeue_true", string encoding = "string", int truncate = default(int))
         {
             // to ensure "count" is required (not null)
             if (count == null)
@@ -111,8 +54,26 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
                 this.Count = count;
             }
 
-            this.Ackmode = ackmode;
-            this.Encoding = encoding;
+            // to ensure "ackmode" is required (not null)
+            if (ackmode == null)
+            {
+                throw new InvalidDataException("ackmode is a required property for ConsumeRequest and cannot be null");
+            }
+            else
+            {
+                this.Ackmode = ackmode;
+            }
+
+            // to ensure "encoding" is required (not null)
+            if (encoding == null)
+            {
+                throw new InvalidDataException("encoding is a required property for ConsumeRequest and cannot be null");
+            }
+            else
+            {
+                this.Encoding = encoding;
+            }
+
             // to ensure "truncate" is required (not null)
             if (truncate == null)
             {
@@ -130,6 +91,18 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
         public int Count { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Ackmode
+        /// </summary>
+        [DataMember(Name="ackmode", EmitDefaultValue=false)]
+        public string Ackmode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Encoding
+        /// </summary>
+        [DataMember(Name="encoding", EmitDefaultValue=false)]
+        public string Encoding { get; set; }
 
         /// <summary>
         /// Gets or Sets Truncate
@@ -190,11 +163,13 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
                 ) && 
                 (
                     this.Ackmode == input.Ackmode ||
-                    this.Ackmode.Equals(input.Ackmode)
+                    (this.Ackmode != null &&
+                    this.Ackmode.Equals(input.Ackmode))
                 ) && 
                 (
                     this.Encoding == input.Encoding ||
-                    this.Encoding.Equals(input.Encoding)
+                    (this.Encoding != null &&
+                    this.Encoding.Equals(input.Encoding))
                 ) && 
                 (
                     this.Truncate == input.Truncate ||
@@ -214,41 +189,16 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
                 int hashCode = 41;
                 if (this.Count != null)
                     hashCode = hashCode * 59 + this.Count.GetHashCode();
-                hashCode = hashCode * 59 + this.Ackmode.GetHashCode();
-                hashCode = hashCode * 59 + this.Encoding.GetHashCode();
+                if (this.Ackmode != null)
+                    hashCode = hashCode * 59 + this.Ackmode.GetHashCode();
+                if (this.Encoding != null)
+                    hashCode = hashCode * 59 + this.Encoding.GetHashCode();
                 if (this.Truncate != null)
                     hashCode = hashCode * 59 + this.Truncate.GetHashCode();
                 return hashCode;
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            // Count (int) minimum
-            if(this.Count < (int)0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Count, must be a value greater than or equal to 0.", new [] { "Count" });
-            }
-
-            // Truncate (int) maximum
-            if(this.Truncate > (int)5000000)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Truncate, must be a value less than or equal to 5000000.", new [] { "Truncate" });
-            }
-
-            // Truncate (int) minimum
-            if(this.Truncate < (int)0)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Truncate, must be a value greater than or equal to 0.", new [] { "Truncate" });
-            }
-
-            yield break;
-        }
     }
 
 }

@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,7 +28,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// OverviewSampleRetentionPolicies
     /// </summary>
     [DataContract]
-    public partial class OverviewSampleRetentionPolicies :  IEquatable<OverviewSampleRetentionPolicies>, IValidatableObject
+    public partial class OverviewSampleRetentionPolicies :  IEquatable<OverviewSampleRetentionPolicies>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OverviewSampleRetentionPolicies" /> class.
@@ -37,7 +36,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="detailed">detailed.</param>
         /// <param name="global">global.</param>
         /// <param name="basic">basic.</param>
-        public OverviewSampleRetentionPolicies(Collection<int> detailed = default(Collection<int>), Collection<int> global = default(Collection<int>), Collection<int> basic = default(Collection<int>))
+        public OverviewSampleRetentionPolicies(List<int> detailed = default(List<int>), List<int> global = default(List<int>), List<int> basic = default(List<int>))
         {
             this.Detailed = detailed;
             this.Global = global;
@@ -48,19 +47,19 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Detailed
         /// </summary>
         [DataMember(Name="detailed", EmitDefaultValue=false)]
-        public Collection<int> Detailed { get; set; }
+        public List<int> Detailed { get; set; }
 
         /// <summary>
         /// Gets or Sets Global
         /// </summary>
         [DataMember(Name="global", EmitDefaultValue=false)]
-        public Collection<int> Global { get; set; }
+        public List<int> Global { get; set; }
 
         /// <summary>
         /// Gets or Sets Basic
         /// </summary>
         [DataMember(Name="basic", EmitDefaultValue=false)]
-        public Collection<int> Basic { get; set; }
+        public List<int> Basic { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -143,15 +142,6 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
-        }
     }
 
 }

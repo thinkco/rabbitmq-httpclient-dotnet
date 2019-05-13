@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 <a name="listvirtualhosts"></a>
 # **ListVirtualHosts**
-> ICollection<VHost> ListVirtualHosts ()
+> List<VHost> ListVirtualHosts ()
 
 List VHosts
 
@@ -355,7 +355,7 @@ namespace Example
             try
             {
                 // List VHosts
-                ICollection&lt;VHost&gt; result = apiInstance.ListVirtualHosts();
+                List&lt;VHost&gt; result = apiInstance.ListVirtualHosts();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -372,7 +372,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ICollection<VHost>**](VHost.md)
+[**List<VHost>**](VHost.md)
 
 ### Authorization
 

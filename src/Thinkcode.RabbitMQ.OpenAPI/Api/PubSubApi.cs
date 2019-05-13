@@ -37,8 +37,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>ICollection&lt;ConsumeResponse&gt;</returns>
-        ICollection<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null);
+        /// <returns>List&lt;ConsumeResponse&gt;</returns>
+        List<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null);
 
         /// <summary>
         /// Consume Message
@@ -50,8 +50,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of ICollection&lt;ConsumeResponse&gt;</returns>
-        ApiResponse<ICollection<ConsumeResponse>> ConsumeMessageWithHttpInfo (string vhost, string queue, ConsumeRequest body = null);
+        /// <returns>ApiResponse of List&lt;ConsumeResponse&gt;</returns>
+        ApiResponse<List<ConsumeResponse>> ConsumeMessageWithHttpInfo (string vhost, string queue, ConsumeRequest body = null);
         /// <summary>
         /// Publish Message
         /// </summary>
@@ -96,8 +96,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>Task of ICollection&lt;ConsumeResponse&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<ConsumeResponse>> ConsumeMessageAsync (string vhost, string queue, ConsumeRequest body = null);
+        /// <returns>Task of List&lt;ConsumeResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<ConsumeResponse>> ConsumeMessageAsync (string vhost, string queue, ConsumeRequest body = null);
 
         /// <summary>
         /// Consume Message
@@ -109,8 +109,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (ICollection&lt;ConsumeResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<ConsumeResponse>>> ConsumeMessageAsyncWithHttpInfo (string vhost, string queue, ConsumeRequest body = null);
+        /// <returns>Task of ApiResponse (List&lt;ConsumeResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ConsumeResponse>>> ConsumeMessageAsyncWithHttpInfo (string vhost, string queue, ConsumeRequest body = null);
         /// <summary>
         /// Publish Message
         /// </summary>
@@ -263,10 +263,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>ICollection&lt;ConsumeResponse&gt;</returns>
-        public ICollection<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null)
+        /// <returns>List&lt;ConsumeResponse&gt;</returns>
+        public List<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<ConsumeResponse>> localVarResponse = ConsumeMessageWithHttpInfo(vhost, queue, body);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<ConsumeResponse>> localVarResponse = ConsumeMessageWithHttpInfo(vhost, queue, body);
              return localVarResponse.Data;
         }
 
@@ -277,8 +277,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of ICollection&lt;ConsumeResponse&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<ConsumeResponse> > ConsumeMessageWithHttpInfo (string vhost, string queue, ConsumeRequest body = null)
+        /// <returns>ApiResponse of List&lt;ConsumeResponse&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<ConsumeResponse> > ConsumeMessageWithHttpInfo (string vhost, string queue, ConsumeRequest body = null)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -320,7 +320,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Post< ICollection<ConsumeResponse> >("/queues/{vhost}/{queue}/get", requestOptions, this.Configuration);
+            var response = this.Client.Post< List<ConsumeResponse> >("/queues/{vhost}/{queue}/get", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -338,10 +338,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>Task of ICollection&lt;ConsumeResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<ConsumeResponse>> ConsumeMessageAsync (string vhost, string queue, ConsumeRequest body = null)
+        /// <returns>Task of List&lt;ConsumeResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ConsumeResponse>> ConsumeMessageAsync (string vhost, string queue, ConsumeRequest body = null)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<ConsumeResponse>> localVarResponse = await ConsumeMessageAsyncWithHttpInfo(vhost, queue, body);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<ConsumeResponse>> localVarResponse = await ConsumeMessageAsyncWithHttpInfo(vhost, queue, body);
              return localVarResponse.Data;
 
         }
@@ -353,8 +353,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (ICollection&lt;ConsumeResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<ConsumeResponse>>> ConsumeMessageAsyncWithHttpInfo (string vhost, string queue, ConsumeRequest body = null)
+        /// <returns>Task of ApiResponse (List&lt;ConsumeResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<ConsumeResponse>>> ConsumeMessageAsyncWithHttpInfo (string vhost, string queue, ConsumeRequest body = null)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -397,7 +397,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.PostAsync<ICollection<ConsumeResponse>>("/queues/{vhost}/{queue}/get", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<List<ConsumeResponse>>("/queues/{vhost}/{queue}/get", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

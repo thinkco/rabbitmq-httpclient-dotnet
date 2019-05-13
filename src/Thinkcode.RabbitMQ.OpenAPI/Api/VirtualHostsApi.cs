@@ -141,8 +141,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;VHost&gt;</returns>
-        ICollection<VHost> ListVirtualHosts ();
+        /// <returns>List&lt;VHost&gt;</returns>
+        List<VHost> ListVirtualHosts ();
 
         /// <summary>
         /// List VHosts
@@ -151,8 +151,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;VHost&gt;</returns>
-        ApiResponse<ICollection<VHost>> ListVirtualHostsWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;VHost&gt;</returns>
+        ApiResponse<List<VHost>> ListVirtualHostsWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -276,8 +276,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;VHost&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<VHost>> ListVirtualHostsAsync ();
+        /// <returns>Task of List&lt;VHost&gt;</returns>
+        System.Threading.Tasks.Task<List<VHost>> ListVirtualHostsAsync ();
 
         /// <summary>
         /// List VHosts
@@ -286,8 +286,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;VHost&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<VHost>>> ListVirtualHostsAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;VHost&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<VHost>>> ListVirtualHostsAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -1052,10 +1052,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List VHosts 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;VHost&gt;</returns>
-        public ICollection<VHost> ListVirtualHosts ()
+        /// <returns>List&lt;VHost&gt;</returns>
+        public List<VHost> ListVirtualHosts ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<VHost>> localVarResponse = ListVirtualHostsWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<VHost>> localVarResponse = ListVirtualHostsWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -1063,8 +1063,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List VHosts 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;VHost&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<VHost> > ListVirtualHostsWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;VHost&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<VHost> > ListVirtualHostsWithHttpInfo ()
         {
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
 
@@ -1092,7 +1092,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<VHost> >("/vhosts", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<VHost> >("/vhosts", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1107,10 +1107,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List VHosts 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;VHost&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<VHost>> ListVirtualHostsAsync ()
+        /// <returns>Task of List&lt;VHost&gt;</returns>
+        public async System.Threading.Tasks.Task<List<VHost>> ListVirtualHostsAsync ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<VHost>> localVarResponse = await ListVirtualHostsAsyncWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<VHost>> localVarResponse = await ListVirtualHostsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -1119,8 +1119,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List VHosts 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;VHost&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<VHost>>> ListVirtualHostsAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;VHost&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<VHost>>> ListVirtualHostsAsyncWithHttpInfo ()
         {
 
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
@@ -1149,7 +1149,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<VHost>>("/vhosts", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<VHost>>("/vhosts", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

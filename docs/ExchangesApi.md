@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 <a name="listexchanges"></a>
 # **ListExchanges**
-> ICollection<Exchange> ListExchanges ()
+> List<Exchange> ListExchanges ()
 
 List Exchanges
 
@@ -236,7 +236,7 @@ namespace Example
             try
             {
                 // List Exchanges
-                ICollection&lt;Exchange&gt; result = apiInstance.ListExchanges();
+                List&lt;Exchange&gt; result = apiInstance.ListExchanges();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -253,7 +253,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ICollection<Exchange>**](Exchange.md)
+[**List<Exchange>**](Exchange.md)
 
 ### Authorization
 
@@ -268,7 +268,7 @@ This endpoint does not need any parameter.
 
 <a name="listexchangesforhost"></a>
 # **ListExchangesForHost**
-> ICollection<Exchange> ListExchangesForHost (string vhost)
+> List<Exchange> ListExchangesForHost (string vhost)
 
 List Exchanges for VHost
 
@@ -296,7 +296,7 @@ namespace Example
             try
             {
                 // List Exchanges for VHost
-                ICollection&lt;Exchange&gt; result = apiInstance.ListExchangesForHost(vhost);
+                List&lt;Exchange&gt; result = apiInstance.ListExchangesForHost(vhost);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<Exchange>**](Exchange.md)
+[**List<Exchange>**](Exchange.md)
 
 ### Authorization
 

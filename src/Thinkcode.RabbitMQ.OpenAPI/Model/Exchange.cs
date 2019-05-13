@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,7 +28,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// Exchange
     /// </summary>
     [DataContract]
-    public partial class Exchange :  IEquatable<Exchange>, IValidatableObject
+    public partial class Exchange :  IEquatable<Exchange>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Exchange" /> class.
@@ -45,7 +44,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="type">type.</param>
         /// <param name="userWhoPerformedAction">userWhoPerformedAction.</param>
         /// <param name="vhost">vhost.</param>
-        public Exchange(BindingRequestArguments arguments = default(BindingRequestArguments), bool autoDelete = default(bool), bool durable = default(bool), Collection<Object> incoming = default(Collection<Object>), bool _internal = default(bool), ExchangeMessageStats messageStats = default(ExchangeMessageStats), string name = default(string), Collection<Object> outgoing = default(Collection<Object>), string type = default(string), string userWhoPerformedAction = default(string), string vhost = default(string))
+        public Exchange(BindingRequestArguments arguments = default(BindingRequestArguments), bool autoDelete = default(bool), bool durable = default(bool), List<Object> incoming = default(List<Object>), bool _internal = default(bool), ExchangeMessageStats messageStats = default(ExchangeMessageStats), string name = default(string), List<Object> outgoing = default(List<Object>), string type = default(string), string userWhoPerformedAction = default(string), string vhost = default(string))
         {
             this.Arguments = arguments;
             this.AutoDelete = autoDelete;
@@ -82,7 +81,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Incoming
         /// </summary>
         [DataMember(Name="incoming", EmitDefaultValue=false)]
-        public Collection<Object> Incoming { get; set; }
+        public List<Object> Incoming { get; set; }
 
         /// <summary>
         /// Gets or Sets Internal
@@ -106,7 +105,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Outgoing
         /// </summary>
         [DataMember(Name="outgoing", EmitDefaultValue=false)]
-        public Collection<Object> Outgoing { get; set; }
+        public List<Object> Outgoing { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
@@ -271,15 +270,6 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
-        }
     }
 
 }

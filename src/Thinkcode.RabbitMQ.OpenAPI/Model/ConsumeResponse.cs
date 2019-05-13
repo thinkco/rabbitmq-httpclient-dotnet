@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,7 +28,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// ConsumeResponse
     /// </summary>
     [DataContract]
-    public partial class ConsumeResponse :  IEquatable<ConsumeResponse>, IValidatableObject
+    public partial class ConsumeResponse :  IEquatable<ConsumeResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsumeResponse" /> class.
@@ -42,7 +41,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="properties">properties.</param>
         /// <param name="redelivered">redelivered.</param>
         /// <param name="routingKey">routingKey.</param>
-        public ConsumeResponse(string exchange = default(string), int messageCount = default(int), string payload = default(string), int payloadBytes = default(int), string payloadEncoding = default(string), Collection<MessageProperties> properties = default(Collection<MessageProperties>), bool redelivered = default(bool), string routingKey = default(string))
+        public ConsumeResponse(string exchange = default(string), int messageCount = default(int), string payload = default(string), int payloadBytes = default(int), string payloadEncoding = default(string), List<MessageProperties> properties = default(List<MessageProperties>), bool redelivered = default(bool), string routingKey = default(string))
         {
             this.Exchange = exchange;
             this.MessageCount = messageCount;
@@ -88,7 +87,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Properties
         /// </summary>
         [DataMember(Name="properties", EmitDefaultValue=false)]
-        public Collection<MessageProperties> Properties { get; set; }
+        public List<MessageProperties> Properties { get; set; }
 
         /// <summary>
         /// Gets or Sets Redelivered
@@ -223,15 +222,6 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
-        }
     }
 
 }

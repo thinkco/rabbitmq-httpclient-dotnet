@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,7 +28,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// Definition
     /// </summary>
     [DataContract]
-    public partial class Definition :  IEquatable<Definition>, IValidatableObject
+    public partial class Definition :  IEquatable<Definition>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Definition" /> class.
@@ -40,7 +39,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="policies">policies.</param>
         /// <param name="queues">queues.</param>
         /// <param name="rabbitVersion">rabbitVersion.</param>
-        public Definition(Collection<Binding> bindings = default(Collection<Binding>), Collection<Exchange> exchanges = default(Collection<Exchange>), Collection<Object> parameters = default(Collection<Object>), Collection<Object> policies = default(Collection<Object>), Collection<Queue> queues = default(Collection<Queue>), string rabbitVersion = default(string))
+        public Definition(List<Binding> bindings = default(List<Binding>), List<Exchange> exchanges = default(List<Exchange>), List<Object> parameters = default(List<Object>), List<Object> policies = default(List<Object>), List<Queue> queues = default(List<Queue>), string rabbitVersion = default(string))
         {
             this.Bindings = bindings;
             this.Exchanges = exchanges;
@@ -54,31 +53,31 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Bindings
         /// </summary>
         [DataMember(Name="bindings", EmitDefaultValue=false)]
-        public Collection<Binding> Bindings { get; set; }
+        public List<Binding> Bindings { get; set; }
 
         /// <summary>
         /// Gets or Sets Exchanges
         /// </summary>
         [DataMember(Name="exchanges", EmitDefaultValue=false)]
-        public Collection<Exchange> Exchanges { get; set; }
+        public List<Exchange> Exchanges { get; set; }
 
         /// <summary>
         /// Gets or Sets Parameters
         /// </summary>
         [DataMember(Name="parameters", EmitDefaultValue=false)]
-        public Collection<Object> Parameters { get; set; }
+        public List<Object> Parameters { get; set; }
 
         /// <summary>
         /// Gets or Sets Policies
         /// </summary>
         [DataMember(Name="policies", EmitDefaultValue=false)]
-        public Collection<Object> Policies { get; set; }
+        public List<Object> Policies { get; set; }
 
         /// <summary>
         /// Gets or Sets Queues
         /// </summary>
         [DataMember(Name="queues", EmitDefaultValue=false)]
-        public Collection<Queue> Queues { get; set; }
+        public List<Queue> Queues { get; set; }
 
         /// <summary>
         /// Gets or Sets RabbitVersion
@@ -191,15 +190,6 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
-        }
     }
 
 }

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="listuserpermissions"></a>
 # **ListUserPermissions**
-> ICollection<PermissionUser> ListUserPermissions (string user)
+> List<PermissionUser> ListUserPermissions (string user)
 
 List User Permissions
 
@@ -39,7 +39,7 @@ namespace Example
             try
             {
                 // List User Permissions
-                ICollection&lt;PermissionUser&gt; result = apiInstance.ListUserPermissions(user);
+                List&lt;PermissionUser&gt; result = apiInstance.ListUserPermissions(user);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<PermissionUser>**](PermissionUser.md)
+[**List<PermissionUser>**](PermissionUser.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 <a name="listuserstopicpermissions"></a>
 # **ListUsersTopicPermissions**
-> ICollection<PermissionTopic> ListUsersTopicPermissions (string user)
+> List<PermissionTopic> ListUsersTopicPermissions (string user)
 
 List Users Topic Permissions
 
@@ -102,7 +102,7 @@ namespace Example
             try
             {
                 // List Users Topic Permissions
-                ICollection&lt;PermissionTopic&gt; result = apiInstance.ListUsersTopicPermissions(user);
+                List&lt;PermissionTopic&gt; result = apiInstance.ListUsersTopicPermissions(user);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<PermissionTopic>**](PermissionTopic.md)
+[**List<PermissionTopic>**](PermissionTopic.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 <a name="listuserswithoutpermissions"></a>
 # **ListUsersWithoutPermissions**
-> ICollection<User> ListUsersWithoutPermissions ()
+> List<User> ListUsersWithoutPermissions ()
 
 List Users without Permissions
 
@@ -164,7 +164,7 @@ namespace Example
             try
             {
                 // List Users without Permissions
-                ICollection&lt;User&gt; result = apiInstance.ListUsersWithoutPermissions();
+                List&lt;User&gt; result = apiInstance.ListUsersWithoutPermissions();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -181,7 +181,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ICollection<User>**](User.md)
+[**List<User>**](User.md)
 
 ### Authorization
 

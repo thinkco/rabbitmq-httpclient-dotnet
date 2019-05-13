@@ -37,8 +37,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>ICollection&lt;ConsumeResponse&gt;</returns>
-        ICollection<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null);
+        /// <returns>List&lt;ConsumeResponse&gt;</returns>
+        List<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null);
 
         /// <summary>
         /// Consume Message
@@ -50,8 +50,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of ICollection&lt;ConsumeResponse&gt;</returns>
-        ApiResponse<ICollection<ConsumeResponse>> ConsumeMessageWithHttpInfo (string vhost, string queue, ConsumeRequest body = null);
+        /// <returns>ApiResponse of List&lt;ConsumeResponse&gt;</returns>
+        ApiResponse<List<ConsumeResponse>> ConsumeMessageWithHttpInfo (string vhost, string queue, ConsumeRequest body = null);
         /// <summary>
         /// Create Queue
         /// </summary>
@@ -184,8 +184,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        ICollection<Binding> ListBindingsForQueue (string vhost, string queue);
+        /// <returns>List&lt;Binding&gt;</returns>
+        List<Binding> ListBindingsForQueue (string vhost, string queue);
 
         /// <summary>
         /// List All Bindings for Queue
@@ -196,8 +196,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        ApiResponse<ICollection<Binding>> ListBindingsForQueueWithHttpInfo (string vhost, string queue);
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        ApiResponse<List<Binding>> ListBindingsForQueueWithHttpInfo (string vhost, string queue);
         /// <summary>
         /// List Queues
         /// </summary>
@@ -205,8 +205,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;Queue&gt;</returns>
-        ICollection<Queue> ListQueues ();
+        /// <returns>List&lt;Queue&gt;</returns>
+        List<Queue> ListQueues ();
 
         /// <summary>
         /// List Queues
@@ -215,8 +215,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;Queue&gt;</returns>
-        ApiResponse<ICollection<Queue>> ListQueuesWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;Queue&gt;</returns>
+        ApiResponse<List<Queue>> ListQueuesWithHttpInfo ();
         /// <summary>
         /// List Queues for VHost
         /// </summary>
@@ -225,8 +225,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>ICollection&lt;Queue&gt;</returns>
-        ICollection<Queue> ListQueuesForVirtualHost (string vhost);
+        /// <returns>List&lt;Queue&gt;</returns>
+        List<Queue> ListQueuesForVirtualHost (string vhost);
 
         /// <summary>
         /// List Queues for VHost
@@ -236,8 +236,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>ApiResponse of ICollection&lt;Queue&gt;</returns>
-        ApiResponse<ICollection<Queue>> ListQueuesForVirtualHostWithHttpInfo (string vhost);
+        /// <returns>ApiResponse of List&lt;Queue&gt;</returns>
+        ApiResponse<List<Queue>> ListQueuesForVirtualHostWithHttpInfo (string vhost);
         #endregion Synchronous Operations
     }
 
@@ -257,8 +257,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>Task of ICollection&lt;ConsumeResponse&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<ConsumeResponse>> ConsumeMessageAsync (string vhost, string queue, ConsumeRequest body = null);
+        /// <returns>Task of List&lt;ConsumeResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<ConsumeResponse>> ConsumeMessageAsync (string vhost, string queue, ConsumeRequest body = null);
 
         /// <summary>
         /// Consume Message
@@ -270,8 +270,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (ICollection&lt;ConsumeResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<ConsumeResponse>>> ConsumeMessageAsyncWithHttpInfo (string vhost, string queue, ConsumeRequest body = null);
+        /// <returns>Task of ApiResponse (List&lt;ConsumeResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ConsumeResponse>>> ConsumeMessageAsyncWithHttpInfo (string vhost, string queue, ConsumeRequest body = null);
         /// <summary>
         /// Create Queue
         /// </summary>
@@ -404,8 +404,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsForQueueAsync (string vhost, string queue);
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        System.Threading.Tasks.Task<List<Binding>> ListBindingsForQueueAsync (string vhost, string queue);
 
         /// <summary>
         /// List All Bindings for Queue
@@ -416,8 +416,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<Binding>>> ListBindingsForQueueAsyncWithHttpInfo (string vhost, string queue);
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Binding>>> ListBindingsForQueueAsyncWithHttpInfo (string vhost, string queue);
         /// <summary>
         /// List Queues
         /// </summary>
@@ -425,8 +425,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;Queue&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<Queue>> ListQueuesAsync ();
+        /// <returns>Task of List&lt;Queue&gt;</returns>
+        System.Threading.Tasks.Task<List<Queue>> ListQueuesAsync ();
 
         /// <summary>
         /// List Queues
@@ -435,8 +435,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;Queue&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<Queue>>> ListQueuesAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;Queue&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Queue>>> ListQueuesAsyncWithHttpInfo ();
         /// <summary>
         /// List Queues for VHost
         /// </summary>
@@ -445,8 +445,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>Task of ICollection&lt;Queue&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<Queue>> ListQueuesForVirtualHostAsync (string vhost);
+        /// <returns>Task of List&lt;Queue&gt;</returns>
+        System.Threading.Tasks.Task<List<Queue>> ListQueuesForVirtualHostAsync (string vhost);
 
         /// <summary>
         /// List Queues for VHost
@@ -456,8 +456,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Queue&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<Queue>>> ListQueuesForVirtualHostAsyncWithHttpInfo (string vhost);
+        /// <returns>Task of ApiResponse (List&lt;Queue&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Queue>>> ListQueuesForVirtualHostAsyncWithHttpInfo (string vhost);
         #endregion Asynchronous Operations
     }
 
@@ -585,10 +585,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>ICollection&lt;ConsumeResponse&gt;</returns>
-        public ICollection<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null)
+        /// <returns>List&lt;ConsumeResponse&gt;</returns>
+        public List<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<ConsumeResponse>> localVarResponse = ConsumeMessageWithHttpInfo(vhost, queue, body);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<ConsumeResponse>> localVarResponse = ConsumeMessageWithHttpInfo(vhost, queue, body);
              return localVarResponse.Data;
         }
 
@@ -599,8 +599,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of ICollection&lt;ConsumeResponse&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<ConsumeResponse> > ConsumeMessageWithHttpInfo (string vhost, string queue, ConsumeRequest body = null)
+        /// <returns>ApiResponse of List&lt;ConsumeResponse&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<ConsumeResponse> > ConsumeMessageWithHttpInfo (string vhost, string queue, ConsumeRequest body = null)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -642,7 +642,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Post< ICollection<ConsumeResponse> >("/queues/{vhost}/{queue}/get", requestOptions, this.Configuration);
+            var response = this.Client.Post< List<ConsumeResponse> >("/queues/{vhost}/{queue}/get", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -660,10 +660,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>Task of ICollection&lt;ConsumeResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<ConsumeResponse>> ConsumeMessageAsync (string vhost, string queue, ConsumeRequest body = null)
+        /// <returns>Task of List&lt;ConsumeResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ConsumeResponse>> ConsumeMessageAsync (string vhost, string queue, ConsumeRequest body = null)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<ConsumeResponse>> localVarResponse = await ConsumeMessageAsyncWithHttpInfo(vhost, queue, body);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<ConsumeResponse>> localVarResponse = await ConsumeMessageAsyncWithHttpInfo(vhost, queue, body);
              return localVarResponse.Data;
 
         }
@@ -675,8 +675,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
         /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (ICollection&lt;ConsumeResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<ConsumeResponse>>> ConsumeMessageAsyncWithHttpInfo (string vhost, string queue, ConsumeRequest body = null)
+        /// <returns>Task of ApiResponse (List&lt;ConsumeResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<ConsumeResponse>>> ConsumeMessageAsyncWithHttpInfo (string vhost, string queue, ConsumeRequest body = null)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -719,7 +719,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.PostAsync<ICollection<ConsumeResponse>>("/queues/{vhost}/{queue}/get", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<List<ConsumeResponse>>("/queues/{vhost}/{queue}/get", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1506,10 +1506,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        public ICollection<Binding> ListBindingsForQueue (string vhost, string queue)
+        /// <returns>List&lt;Binding&gt;</returns>
+        public List<Binding> ListBindingsForQueue (string vhost, string queue)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = ListBindingsForQueueWithHttpInfo(vhost, queue);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = ListBindingsForQueueWithHttpInfo(vhost, queue);
              return localVarResponse.Data;
         }
 
@@ -1519,8 +1519,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<Binding> > ListBindingsForQueueWithHttpInfo (string vhost, string queue)
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<Binding> > ListBindingsForQueueWithHttpInfo (string vhost, string queue)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1560,7 +1560,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<Binding> >("/queues/{vhost}/{queue}/bindings", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<Binding> >("/queues/{vhost}/{queue}/bindings", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1577,10 +1577,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsForQueueAsync (string vhost, string queue)
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Binding>> ListBindingsForQueueAsync (string vhost, string queue)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = await ListBindingsForQueueAsyncWithHttpInfo(vhost, queue);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = await ListBindingsForQueueAsyncWithHttpInfo(vhost, queue);
              return localVarResponse.Data;
 
         }
@@ -1591,8 +1591,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>>> ListBindingsForQueueAsyncWithHttpInfo (string vhost, string queue)
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>>> ListBindingsForQueueAsyncWithHttpInfo (string vhost, string queue)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1633,7 +1633,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<Binding>>("/queues/{vhost}/{queue}/bindings", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<Binding>>("/queues/{vhost}/{queue}/bindings", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1648,10 +1648,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Queues 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;Queue&gt;</returns>
-        public ICollection<Queue> ListQueues ()
+        /// <returns>List&lt;Queue&gt;</returns>
+        public List<Queue> ListQueues ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Queue>> localVarResponse = ListQueuesWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Queue>> localVarResponse = ListQueuesWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -1659,8 +1659,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Queues 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;Queue&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<Queue> > ListQueuesWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;Queue&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<Queue> > ListQueuesWithHttpInfo ()
         {
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
 
@@ -1688,7 +1688,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<Queue> >("/queues", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<Queue> >("/queues", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1703,10 +1703,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Queues 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;Queue&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<Queue>> ListQueuesAsync ()
+        /// <returns>Task of List&lt;Queue&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Queue>> ListQueuesAsync ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Queue>> localVarResponse = await ListQueuesAsyncWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Queue>> localVarResponse = await ListQueuesAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -1715,8 +1715,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Queues 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;Queue&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Queue>>> ListQueuesAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;Queue&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Queue>>> ListQueuesAsyncWithHttpInfo ()
         {
 
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
@@ -1745,7 +1745,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<Queue>>("/queues", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<Queue>>("/queues", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1761,10 +1761,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>ICollection&lt;Queue&gt;</returns>
-        public ICollection<Queue> ListQueuesForVirtualHost (string vhost)
+        /// <returns>List&lt;Queue&gt;</returns>
+        public List<Queue> ListQueuesForVirtualHost (string vhost)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Queue>> localVarResponse = ListQueuesForVirtualHostWithHttpInfo(vhost);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Queue>> localVarResponse = ListQueuesForVirtualHostWithHttpInfo(vhost);
              return localVarResponse.Data;
         }
 
@@ -1773,8 +1773,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>ApiResponse of ICollection&lt;Queue&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<Queue> > ListQueuesForVirtualHostWithHttpInfo (string vhost)
+        /// <returns>ApiResponse of List&lt;Queue&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<Queue> > ListQueuesForVirtualHostWithHttpInfo (string vhost)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1808,7 +1808,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<Queue> >("/queues/{vhost}", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<Queue> >("/queues/{vhost}", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1824,10 +1824,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>Task of ICollection&lt;Queue&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<Queue>> ListQueuesForVirtualHostAsync (string vhost)
+        /// <returns>Task of List&lt;Queue&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Queue>> ListQueuesForVirtualHostAsync (string vhost)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Queue>> localVarResponse = await ListQueuesForVirtualHostAsyncWithHttpInfo(vhost);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Queue>> localVarResponse = await ListQueuesForVirtualHostAsyncWithHttpInfo(vhost);
              return localVarResponse.Data;
 
         }
@@ -1837,8 +1837,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Queue&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Queue>>> ListQueuesForVirtualHostAsyncWithHttpInfo (string vhost)
+        /// <returns>Task of ApiResponse (List&lt;Queue&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Queue>>> ListQueuesForVirtualHostAsyncWithHttpInfo (string vhost)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1873,7 +1873,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<Queue>>("/queues/{vhost}", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<Queue>>("/queues/{vhost}", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

@@ -105,8 +105,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;Exchange&gt;</returns>
-        ICollection<Exchange> ListExchanges ();
+        /// <returns>List&lt;Exchange&gt;</returns>
+        List<Exchange> ListExchanges ();
 
         /// <summary>
         /// List Exchanges
@@ -115,8 +115,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;Exchange&gt;</returns>
-        ApiResponse<ICollection<Exchange>> ListExchangesWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;Exchange&gt;</returns>
+        ApiResponse<List<Exchange>> ListExchangesWithHttpInfo ();
         /// <summary>
         /// List Exchanges for VHost
         /// </summary>
@@ -125,8 +125,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>ICollection&lt;Exchange&gt;</returns>
-        ICollection<Exchange> ListExchangesForHost (string vhost);
+        /// <returns>List&lt;Exchange&gt;</returns>
+        List<Exchange> ListExchangesForHost (string vhost);
 
         /// <summary>
         /// List Exchanges for VHost
@@ -136,8 +136,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>ApiResponse of ICollection&lt;Exchange&gt;</returns>
-        ApiResponse<ICollection<Exchange>> ListExchangesForHostWithHttpInfo (string vhost);
+        /// <returns>ApiResponse of List&lt;Exchange&gt;</returns>
+        ApiResponse<List<Exchange>> ListExchangesForHostWithHttpInfo (string vhost);
         /// <summary>
         /// Publish Message
         /// </summary>
@@ -250,8 +250,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;Exchange&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<Exchange>> ListExchangesAsync ();
+        /// <returns>Task of List&lt;Exchange&gt;</returns>
+        System.Threading.Tasks.Task<List<Exchange>> ListExchangesAsync ();
 
         /// <summary>
         /// List Exchanges
@@ -260,8 +260,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;Exchange&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<Exchange>>> ListExchangesAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;Exchange&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Exchange>>> ListExchangesAsyncWithHttpInfo ();
         /// <summary>
         /// List Exchanges for VHost
         /// </summary>
@@ -270,8 +270,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>Task of ICollection&lt;Exchange&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<Exchange>> ListExchangesForHostAsync (string vhost);
+        /// <returns>Task of List&lt;Exchange&gt;</returns>
+        System.Threading.Tasks.Task<List<Exchange>> ListExchangesForHostAsync (string vhost);
 
         /// <summary>
         /// List Exchanges for VHost
@@ -281,8 +281,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Exchange&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<Exchange>>> ListExchangesForHostAsyncWithHttpInfo (string vhost);
+        /// <returns>Task of ApiResponse (List&lt;Exchange&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Exchange>>> ListExchangesForHostAsyncWithHttpInfo (string vhost);
         /// <summary>
         /// Publish Message
         /// </summary>
@@ -866,10 +866,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Exchanges 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;Exchange&gt;</returns>
-        public ICollection<Exchange> ListExchanges ()
+        /// <returns>List&lt;Exchange&gt;</returns>
+        public List<Exchange> ListExchanges ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Exchange>> localVarResponse = ListExchangesWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Exchange>> localVarResponse = ListExchangesWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -877,8 +877,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Exchanges 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;Exchange&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<Exchange> > ListExchangesWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;Exchange&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<Exchange> > ListExchangesWithHttpInfo ()
         {
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
 
@@ -906,7 +906,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<Exchange> >("/exchanges", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<Exchange> >("/exchanges", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -921,10 +921,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Exchanges 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;Exchange&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<Exchange>> ListExchangesAsync ()
+        /// <returns>Task of List&lt;Exchange&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Exchange>> ListExchangesAsync ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Exchange>> localVarResponse = await ListExchangesAsyncWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Exchange>> localVarResponse = await ListExchangesAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -933,8 +933,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Exchanges 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;Exchange&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Exchange>>> ListExchangesAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;Exchange&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Exchange>>> ListExchangesAsyncWithHttpInfo ()
         {
 
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
@@ -963,7 +963,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<Exchange>>("/exchanges", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<Exchange>>("/exchanges", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -979,10 +979,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>ICollection&lt;Exchange&gt;</returns>
-        public ICollection<Exchange> ListExchangesForHost (string vhost)
+        /// <returns>List&lt;Exchange&gt;</returns>
+        public List<Exchange> ListExchangesForHost (string vhost)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Exchange>> localVarResponse = ListExchangesForHostWithHttpInfo(vhost);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Exchange>> localVarResponse = ListExchangesForHostWithHttpInfo(vhost);
              return localVarResponse.Data;
         }
 
@@ -991,8 +991,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>ApiResponse of ICollection&lt;Exchange&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<Exchange> > ListExchangesForHostWithHttpInfo (string vhost)
+        /// <returns>ApiResponse of List&lt;Exchange&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<Exchange> > ListExchangesForHostWithHttpInfo (string vhost)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1026,7 +1026,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<Exchange> >("/exchanges/{vhost}", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<Exchange> >("/exchanges/{vhost}", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1042,10 +1042,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>Task of ICollection&lt;Exchange&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<Exchange>> ListExchangesForHostAsync (string vhost)
+        /// <returns>Task of List&lt;Exchange&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Exchange>> ListExchangesForHostAsync (string vhost)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Exchange>> localVarResponse = await ListExchangesForHostAsyncWithHttpInfo(vhost);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Exchange>> localVarResponse = await ListExchangesForHostAsyncWithHttpInfo(vhost);
              return localVarResponse.Data;
 
         }
@@ -1055,8 +1055,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Exchange&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Exchange>>> ListExchangesForHostAsyncWithHttpInfo (string vhost)
+        /// <returns>Task of ApiResponse (List&lt;Exchange&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Exchange>>> ListExchangesForHostAsyncWithHttpInfo (string vhost)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1091,7 +1091,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<Exchange>>("/exchanges/{vhost}", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<Exchange>>("/exchanges/{vhost}", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

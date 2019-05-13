@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,7 +28,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// Queue
     /// </summary>
     [DataContract]
-    public partial class Queue :  IEquatable<Queue>, IValidatableObject
+    public partial class Queue :  IEquatable<Queue>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Queue" /> class.
@@ -71,7 +70,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="reductionsDetails">reductionsDetails.</param>
         /// <param name="state">state.</param>
         /// <param name="vhost">vhost.</param>
-        public Queue(BindingRequestArguments arguments = default(BindingRequestArguments), bool autoDelete = default(bool), QueueBackingQueueStatus backingQueueStatus = default(QueueBackingQueueStatus), Collection<Object> consumerDetails = default(Collection<Object>), int consumers = default(int), Collection<Object> deliveries = default(Collection<Object>), bool durable = default(bool), Collection<Object> effectivePolicyDefinition = default(Collection<Object>), bool exclusive = default(bool), QueueGarbageCollection garbageCollection = default(QueueGarbageCollection), string idleSince = default(string), Collection<Object> incoming = default(Collection<Object>), int memory = default(int), int messageBytes = default(int), int messageBytesPagedOut = default(int), int messageBytesPersistent = default(int), int messageBytesRam = default(int), int messageBytesReady = default(int), int messageBytesUnacknowledged = default(int), QueueMessageStats messageStats = default(QueueMessageStats), int messages = default(int), ExchangeMessageStatsPublishInDetails messagesDetails = default(ExchangeMessageStatsPublishInDetails), int messagesPagedOut = default(int), int messagesPersistent = default(int), int messagesRam = default(int), int messagesReady = default(int), ExchangeMessageStatsPublishInDetails messagesReadyDetails = default(ExchangeMessageStatsPublishInDetails), int messagesReadyRam = default(int), int messagesUnacknowledged = default(int), ExchangeMessageStatsPublishInDetails messagesUnacknowledgedDetails = default(ExchangeMessageStatsPublishInDetails), int messagesUnacknowledgedRam = default(int), string name = default(string), string node = default(string), int reductions = default(int), ExchangeMessageStatsPublishInDetails reductionsDetails = default(ExchangeMessageStatsPublishInDetails), string state = default(string), string vhost = default(string))
+        public Queue(BindingRequestArguments arguments = default(BindingRequestArguments), bool autoDelete = default(bool), QueueBackingQueueStatus backingQueueStatus = default(QueueBackingQueueStatus), List<Object> consumerDetails = default(List<Object>), int consumers = default(int), List<Object> deliveries = default(List<Object>), bool durable = default(bool), List<Object> effectivePolicyDefinition = default(List<Object>), bool exclusive = default(bool), QueueGarbageCollection garbageCollection = default(QueueGarbageCollection), string idleSince = default(string), List<Object> incoming = default(List<Object>), int memory = default(int), int messageBytes = default(int), int messageBytesPagedOut = default(int), int messageBytesPersistent = default(int), int messageBytesRam = default(int), int messageBytesReady = default(int), int messageBytesUnacknowledged = default(int), QueueMessageStats messageStats = default(QueueMessageStats), int messages = default(int), ExchangeMessageStatsPublishInDetails messagesDetails = default(ExchangeMessageStatsPublishInDetails), int messagesPagedOut = default(int), int messagesPersistent = default(int), int messagesRam = default(int), int messagesReady = default(int), ExchangeMessageStatsPublishInDetails messagesReadyDetails = default(ExchangeMessageStatsPublishInDetails), int messagesReadyRam = default(int), int messagesUnacknowledged = default(int), ExchangeMessageStatsPublishInDetails messagesUnacknowledgedDetails = default(ExchangeMessageStatsPublishInDetails), int messagesUnacknowledgedRam = default(int), string name = default(string), string node = default(string), int reductions = default(int), ExchangeMessageStatsPublishInDetails reductionsDetails = default(ExchangeMessageStatsPublishInDetails), string state = default(string), string vhost = default(string))
         {
             this.Arguments = arguments;
             this.AutoDelete = autoDelete;
@@ -134,7 +133,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets ConsumerDetails
         /// </summary>
         [DataMember(Name="consumer_details", EmitDefaultValue=false)]
-        public Collection<Object> ConsumerDetails { get; set; }
+        public List<Object> ConsumerDetails { get; set; }
 
         /// <summary>
         /// Gets or Sets Consumers
@@ -146,7 +145,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Deliveries
         /// </summary>
         [DataMember(Name="deliveries", EmitDefaultValue=false)]
-        public Collection<Object> Deliveries { get; set; }
+        public List<Object> Deliveries { get; set; }
 
         /// <summary>
         /// Gets or Sets Durable
@@ -158,7 +157,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets EffectivePolicyDefinition
         /// </summary>
         [DataMember(Name="effective_policy_definition", EmitDefaultValue=false)]
-        public Collection<Object> EffectivePolicyDefinition { get; set; }
+        public List<Object> EffectivePolicyDefinition { get; set; }
 
         /// <summary>
         /// Gets or Sets Exclusive
@@ -182,7 +181,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Incoming
         /// </summary>
         [DataMember(Name="incoming", EmitDefaultValue=false)]
-        public Collection<Object> Incoming { get; set; }
+        public List<Object> Incoming { get; set; }
 
         /// <summary>
         /// Gets or Sets Memory
@@ -687,15 +686,6 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
-        }
     }
 
 }

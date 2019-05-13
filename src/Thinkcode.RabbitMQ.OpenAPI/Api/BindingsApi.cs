@@ -115,8 +115,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        ICollection<Binding> ListBindings ();
+        /// <returns>List&lt;Binding&gt;</returns>
+        List<Binding> ListBindings ();
 
         /// <summary>
         /// List Bindings
@@ -125,8 +125,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        ApiResponse<ICollection<Binding>> ListBindingsWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        ApiResponse<List<Binding>> ListBindingsWithHttpInfo ();
         /// <summary>
         /// List Bindings as Destination
         /// </summary>
@@ -136,8 +136,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        ICollection<Binding> ListBindingsAsDestination (string vhost, string exchange);
+        /// <returns>List&lt;Binding&gt;</returns>
+        List<Binding> ListBindingsAsDestination (string vhost, string exchange);
 
         /// <summary>
         /// List Bindings as Destination
@@ -148,8 +148,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        ApiResponse<ICollection<Binding>> ListBindingsAsDestinationWithHttpInfo (string vhost, string exchange);
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        ApiResponse<List<Binding>> ListBindingsAsDestinationWithHttpInfo (string vhost, string exchange);
         /// <summary>
         /// List Bindings as Source
         /// </summary>
@@ -159,8 +159,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        ICollection<Binding> ListBindingsAsSource (string vhost, string exchange);
+        /// <returns>List&lt;Binding&gt;</returns>
+        List<Binding> ListBindingsAsSource (string vhost, string exchange);
 
         /// <summary>
         /// List Bindings as Source
@@ -171,8 +171,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        ApiResponse<ICollection<Binding>> ListBindingsAsSourceWithHttpInfo (string vhost, string exchange);
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        ApiResponse<List<Binding>> ListBindingsAsSourceWithHttpInfo (string vhost, string exchange);
         /// <summary>
         /// List All Bindings for Queue
         /// </summary>
@@ -182,8 +182,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        ICollection<Binding> ListBindingsForQueue (string vhost, string queue);
+        /// <returns>List&lt;Binding&gt;</returns>
+        List<Binding> ListBindingsForQueue (string vhost, string queue);
 
         /// <summary>
         /// List All Bindings for Queue
@@ -194,8 +194,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        ApiResponse<ICollection<Binding>> ListBindingsForQueueWithHttpInfo (string vhost, string queue);
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        ApiResponse<List<Binding>> ListBindingsForQueueWithHttpInfo (string vhost, string queue);
         /// <summary>
         /// List Bindings for Queue
         /// </summary>
@@ -206,8 +206,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
         /// <param name="queue"></param>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        ICollection<Binding> ListBindingsForQueueExchange (string vhost, string exchange, string queue);
+        /// <returns>List&lt;Binding&gt;</returns>
+        List<Binding> ListBindingsForQueueExchange (string vhost, string exchange, string queue);
 
         /// <summary>
         /// List Bindings for Queue
@@ -219,8 +219,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
         /// <param name="queue"></param>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        ApiResponse<ICollection<Binding>> ListBindingsForQueueExchangeWithHttpInfo (string vhost, string exchange, string queue);
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        ApiResponse<List<Binding>> ListBindingsForQueueExchangeWithHttpInfo (string vhost, string exchange, string queue);
         #endregion Synchronous Operations
     }
 
@@ -318,8 +318,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsAsync ();
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        System.Threading.Tasks.Task<List<Binding>> ListBindingsAsync ();
 
         /// <summary>
         /// List Bindings
@@ -328,8 +328,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<Binding>>> ListBindingsAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Binding>>> ListBindingsAsyncWithHttpInfo ();
         /// <summary>
         /// List Bindings as Destination
         /// </summary>
@@ -339,8 +339,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsAsDestinationAsync (string vhost, string exchange);
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        System.Threading.Tasks.Task<List<Binding>> ListBindingsAsDestinationAsync (string vhost, string exchange);
 
         /// <summary>
         /// List Bindings as Destination
@@ -351,8 +351,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<Binding>>> ListBindingsAsDestinationAsyncWithHttpInfo (string vhost, string exchange);
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Binding>>> ListBindingsAsDestinationAsyncWithHttpInfo (string vhost, string exchange);
         /// <summary>
         /// List Bindings as Source
         /// </summary>
@@ -362,8 +362,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsAsSourceAsync (string vhost, string exchange);
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        System.Threading.Tasks.Task<List<Binding>> ListBindingsAsSourceAsync (string vhost, string exchange);
 
         /// <summary>
         /// List Bindings as Source
@@ -374,8 +374,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<Binding>>> ListBindingsAsSourceAsyncWithHttpInfo (string vhost, string exchange);
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Binding>>> ListBindingsAsSourceAsyncWithHttpInfo (string vhost, string exchange);
         /// <summary>
         /// List All Bindings for Queue
         /// </summary>
@@ -385,8 +385,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsForQueueAsync (string vhost, string queue);
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        System.Threading.Tasks.Task<List<Binding>> ListBindingsForQueueAsync (string vhost, string queue);
 
         /// <summary>
         /// List All Bindings for Queue
@@ -397,8 +397,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<Binding>>> ListBindingsForQueueAsyncWithHttpInfo (string vhost, string queue);
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Binding>>> ListBindingsForQueueAsyncWithHttpInfo (string vhost, string queue);
         /// <summary>
         /// List Bindings for Queue
         /// </summary>
@@ -409,8 +409,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsForQueueExchangeAsync (string vhost, string exchange, string queue);
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        System.Threading.Tasks.Task<List<Binding>> ListBindingsForQueueExchangeAsync (string vhost, string exchange, string queue);
 
         /// <summary>
         /// List Bindings for Queue
@@ -422,8 +422,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<Binding>>> ListBindingsForQueueExchangeAsyncWithHttpInfo (string vhost, string exchange, string queue);
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Binding>>> ListBindingsForQueueExchangeAsyncWithHttpInfo (string vhost, string exchange, string queue);
         #endregion Asynchronous Operations
     }
 
@@ -1062,10 +1062,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Bindings 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        public ICollection<Binding> ListBindings ()
+        /// <returns>List&lt;Binding&gt;</returns>
+        public List<Binding> ListBindings ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = ListBindingsWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = ListBindingsWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -1073,8 +1073,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Bindings 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<Binding> > ListBindingsWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<Binding> > ListBindingsWithHttpInfo ()
         {
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
 
@@ -1102,7 +1102,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<Binding> >("/bindings", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<Binding> >("/bindings", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1117,10 +1117,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Bindings 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsAsync ()
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Binding>> ListBindingsAsync ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = await ListBindingsAsyncWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = await ListBindingsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -1129,8 +1129,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Bindings 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>>> ListBindingsAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>>> ListBindingsAsyncWithHttpInfo ()
         {
 
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
@@ -1159,7 +1159,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<Binding>>("/bindings", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<Binding>>("/bindings", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1176,10 +1176,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        public ICollection<Binding> ListBindingsAsDestination (string vhost, string exchange)
+        /// <returns>List&lt;Binding&gt;</returns>
+        public List<Binding> ListBindingsAsDestination (string vhost, string exchange)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = ListBindingsAsDestinationWithHttpInfo(vhost, exchange);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = ListBindingsAsDestinationWithHttpInfo(vhost, exchange);
              return localVarResponse.Data;
         }
 
@@ -1189,8 +1189,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<Binding> > ListBindingsAsDestinationWithHttpInfo (string vhost, string exchange)
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<Binding> > ListBindingsAsDestinationWithHttpInfo (string vhost, string exchange)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1230,7 +1230,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<Binding> >("/exchanges/{vhost}/{exchange}/bindings/destination", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<Binding> >("/exchanges/{vhost}/{exchange}/bindings/destination", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1247,10 +1247,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsAsDestinationAsync (string vhost, string exchange)
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Binding>> ListBindingsAsDestinationAsync (string vhost, string exchange)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = await ListBindingsAsDestinationAsyncWithHttpInfo(vhost, exchange);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = await ListBindingsAsDestinationAsyncWithHttpInfo(vhost, exchange);
              return localVarResponse.Data;
 
         }
@@ -1261,8 +1261,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>>> ListBindingsAsDestinationAsyncWithHttpInfo (string vhost, string exchange)
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>>> ListBindingsAsDestinationAsyncWithHttpInfo (string vhost, string exchange)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1303,7 +1303,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<Binding>>("/exchanges/{vhost}/{exchange}/bindings/destination", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<Binding>>("/exchanges/{vhost}/{exchange}/bindings/destination", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1320,10 +1320,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        public ICollection<Binding> ListBindingsAsSource (string vhost, string exchange)
+        /// <returns>List&lt;Binding&gt;</returns>
+        public List<Binding> ListBindingsAsSource (string vhost, string exchange)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = ListBindingsAsSourceWithHttpInfo(vhost, exchange);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = ListBindingsAsSourceWithHttpInfo(vhost, exchange);
              return localVarResponse.Data;
         }
 
@@ -1333,8 +1333,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<Binding> > ListBindingsAsSourceWithHttpInfo (string vhost, string exchange)
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<Binding> > ListBindingsAsSourceWithHttpInfo (string vhost, string exchange)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1374,7 +1374,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<Binding> >("/exchanges/{vhost}/{exchange}/bindings/source", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<Binding> >("/exchanges/{vhost}/{exchange}/bindings/source", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1391,10 +1391,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsAsSourceAsync (string vhost, string exchange)
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Binding>> ListBindingsAsSourceAsync (string vhost, string exchange)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = await ListBindingsAsSourceAsyncWithHttpInfo(vhost, exchange);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = await ListBindingsAsSourceAsyncWithHttpInfo(vhost, exchange);
              return localVarResponse.Data;
 
         }
@@ -1405,8 +1405,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>>> ListBindingsAsSourceAsyncWithHttpInfo (string vhost, string exchange)
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>>> ListBindingsAsSourceAsyncWithHttpInfo (string vhost, string exchange)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1447,7 +1447,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<Binding>>("/exchanges/{vhost}/{exchange}/bindings/source", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<Binding>>("/exchanges/{vhost}/{exchange}/bindings/source", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1464,10 +1464,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        public ICollection<Binding> ListBindingsForQueue (string vhost, string queue)
+        /// <returns>List&lt;Binding&gt;</returns>
+        public List<Binding> ListBindingsForQueue (string vhost, string queue)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = ListBindingsForQueueWithHttpInfo(vhost, queue);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = ListBindingsForQueueWithHttpInfo(vhost, queue);
              return localVarResponse.Data;
         }
 
@@ -1477,8 +1477,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<Binding> > ListBindingsForQueueWithHttpInfo (string vhost, string queue)
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<Binding> > ListBindingsForQueueWithHttpInfo (string vhost, string queue)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1518,7 +1518,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<Binding> >("/queues/{vhost}/{queue}/bindings", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<Binding> >("/queues/{vhost}/{queue}/bindings", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1535,10 +1535,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsForQueueAsync (string vhost, string queue)
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Binding>> ListBindingsForQueueAsync (string vhost, string queue)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = await ListBindingsForQueueAsyncWithHttpInfo(vhost, queue);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = await ListBindingsForQueueAsyncWithHttpInfo(vhost, queue);
              return localVarResponse.Data;
 
         }
@@ -1549,8 +1549,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="vhost"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>>> ListBindingsForQueueAsyncWithHttpInfo (string vhost, string queue)
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>>> ListBindingsForQueueAsyncWithHttpInfo (string vhost, string queue)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1591,7 +1591,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<Binding>>("/queues/{vhost}/{queue}/bindings", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<Binding>>("/queues/{vhost}/{queue}/bindings", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1609,10 +1609,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
         /// <param name="queue"></param>
-        /// <returns>ICollection&lt;Binding&gt;</returns>
-        public ICollection<Binding> ListBindingsForQueueExchange (string vhost, string exchange, string queue)
+        /// <returns>List&lt;Binding&gt;</returns>
+        public List<Binding> ListBindingsForQueueExchange (string vhost, string exchange, string queue)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = ListBindingsForQueueExchangeWithHttpInfo(vhost, exchange, queue);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = ListBindingsForQueueExchangeWithHttpInfo(vhost, exchange, queue);
              return localVarResponse.Data;
         }
 
@@ -1623,8 +1623,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
         /// <param name="queue"></param>
-        /// <returns>ApiResponse of ICollection&lt;Binding&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<Binding> > ListBindingsForQueueExchangeWithHttpInfo (string vhost, string exchange, string queue)
+        /// <returns>ApiResponse of List&lt;Binding&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<Binding> > ListBindingsForQueueExchangeWithHttpInfo (string vhost, string exchange, string queue)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1670,7 +1670,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<Binding> >("/bindings/{vhost}/e/{exchange}/q/{queue}", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<Binding> >("/bindings/{vhost}/e/{exchange}/q/{queue}", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1688,10 +1688,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ICollection&lt;Binding&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<Binding>> ListBindingsForQueueExchangeAsync (string vhost, string exchange, string queue)
+        /// <returns>Task of List&lt;Binding&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Binding>> ListBindingsForQueueExchangeAsync (string vhost, string exchange, string queue)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>> localVarResponse = await ListBindingsForQueueExchangeAsyncWithHttpInfo(vhost, exchange, queue);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>> localVarResponse = await ListBindingsForQueueExchangeAsyncWithHttpInfo(vhost, exchange, queue);
              return localVarResponse.Data;
 
         }
@@ -1703,8 +1703,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// <param name="vhost"></param>
         /// <param name="exchange"></param>
         /// <param name="queue"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;Binding&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<Binding>>> ListBindingsForQueueExchangeAsyncWithHttpInfo (string vhost, string exchange, string queue)
+        /// <returns>Task of ApiResponse (List&lt;Binding&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<Binding>>> ListBindingsForQueueExchangeAsyncWithHttpInfo (string vhost, string exchange, string queue)
         {
             // verify the required parameter 'vhost' is set
             if (vhost == null)
@@ -1751,7 +1751,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<Binding>>("/bindings/{vhost}/e/{exchange}/q/{queue}", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<Binding>>("/bindings/{vhost}/e/{exchange}/q/{queue}", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,7 +28,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// Overview
     /// </summary>
     [DataContract]
-    public partial class Overview :  IEquatable<Overview>, IValidatableObject
+    public partial class Overview :  IEquatable<Overview>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Overview" /> class.
@@ -50,7 +49,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="ratesMode">ratesMode.</param>
         /// <param name="sampleRetentionPolicies">sampleRetentionPolicies.</param>
         /// <param name="statisticsDbEventQueue">statisticsDbEventQueue.</param>
-        public Overview(OverviewChurnRates churnRates = default(OverviewChurnRates), string clusterName = default(string), Collection<OverviewContexts> contexts = default(Collection<OverviewContexts>), string erlangFullVersion = default(string), string erlangVersion = default(string), Collection<OverviewExchangeTypes> exchangeTypes = default(Collection<OverviewExchangeTypes>), Collection<OverviewListeners> listeners = default(Collection<OverviewListeners>), string managementVersion = default(string), OverviewMessageStats messageStats = default(OverviewMessageStats), string node = default(string), OverviewObjectTotals objectTotals = default(OverviewObjectTotals), OverviewQueueTotals queueTotals = default(OverviewQueueTotals), string rabbitmqVersion = default(string), string ratesMode = default(string), OverviewSampleRetentionPolicies sampleRetentionPolicies = default(OverviewSampleRetentionPolicies), int statisticsDbEventQueue = default(int))
+        public Overview(OverviewChurnRates churnRates = default(OverviewChurnRates), string clusterName = default(string), List<OverviewContexts> contexts = default(List<OverviewContexts>), string erlangFullVersion = default(string), string erlangVersion = default(string), List<OverviewExchangeTypes> exchangeTypes = default(List<OverviewExchangeTypes>), List<OverviewListeners> listeners = default(List<OverviewListeners>), string managementVersion = default(string), OverviewMessageStats messageStats = default(OverviewMessageStats), string node = default(string), OverviewObjectTotals objectTotals = default(OverviewObjectTotals), OverviewQueueTotals queueTotals = default(OverviewQueueTotals), string rabbitmqVersion = default(string), string ratesMode = default(string), OverviewSampleRetentionPolicies sampleRetentionPolicies = default(OverviewSampleRetentionPolicies), int statisticsDbEventQueue = default(int))
         {
             this.ChurnRates = churnRates;
             this.ClusterName = clusterName;
@@ -86,7 +85,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Contexts
         /// </summary>
         [DataMember(Name="contexts", EmitDefaultValue=false)]
-        public Collection<OverviewContexts> Contexts { get; set; }
+        public List<OverviewContexts> Contexts { get; set; }
 
         /// <summary>
         /// Gets or Sets ErlangFullVersion
@@ -104,13 +103,13 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets ExchangeTypes
         /// </summary>
         [DataMember(Name="exchange_types", EmitDefaultValue=false)]
-        public Collection<OverviewExchangeTypes> ExchangeTypes { get; set; }
+        public List<OverviewExchangeTypes> ExchangeTypes { get; set; }
 
         /// <summary>
         /// Gets or Sets Listeners
         /// </summary>
         [DataMember(Name="listeners", EmitDefaultValue=false)]
-        public Collection<OverviewListeners> Listeners { get; set; }
+        public List<OverviewListeners> Listeners { get; set; }
 
         /// <summary>
         /// Gets or Sets ManagementVersion
@@ -351,15 +350,6 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
-        }
     }
 
 }

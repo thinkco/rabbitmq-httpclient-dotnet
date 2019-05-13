@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,7 +28,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// OverviewContexts
     /// </summary>
     [DataContract]
-    public partial class OverviewContexts :  IEquatable<OverviewContexts>, IValidatableObject
+    public partial class OverviewContexts :  IEquatable<OverviewContexts>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OverviewContexts" /> class.
@@ -39,7 +38,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="port">port.</param>
         /// <param name="description">description.</param>
         /// <param name="sslOpts">sslOpts.</param>
-        public OverviewContexts(string node = default(string), string path = default(string), string port = default(string), string description = default(string), Collection<Object> sslOpts = default(Collection<Object>))
+        public OverviewContexts(string node = default(string), string path = default(string), string port = default(string), string description = default(string), List<Object> sslOpts = default(List<Object>))
         {
             this.Node = node;
             this.Path = path;
@@ -76,7 +75,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets SslOpts
         /// </summary>
         [DataMember(Name="ssl_opts", EmitDefaultValue=false)]
-        public Collection<Object> SslOpts { get; set; }
+        public List<Object> SslOpts { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -175,15 +174,6 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
-        }
     }
 
 }

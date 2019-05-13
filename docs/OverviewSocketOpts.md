@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Backlog** | **int** |  | [optional] 
 **ConnectionType** | **string** |  | [optional] 
-**Linger** | **Collection&lt;int&gt;** |  | [optional] 
+**Linger** | **List&lt;int&gt;** |  | [optional] 
 **Port** | **int** |  | [optional] 
 **ExitOnClose** | **bool** |  | [optional] 
 **Nodelay** | **bool** |  | [optional] 

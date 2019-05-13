@@ -20,7 +20,6 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
@@ -29,7 +28,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
     /// OverviewSocketOpts
     /// </summary>
     [DataContract]
-    public partial class OverviewSocketOpts :  IEquatable<OverviewSocketOpts>, IValidatableObject
+    public partial class OverviewSocketOpts :  IEquatable<OverviewSocketOpts>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OverviewSocketOpts" /> class.
@@ -40,7 +39,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="port">port.</param>
         /// <param name="exitOnClose">exitOnClose.</param>
         /// <param name="nodelay">nodelay.</param>
-        public OverviewSocketOpts(int backlog = default(int), string connectionType = default(string), Collection<int> linger = default(Collection<int>), int port = default(int), bool exitOnClose = default(bool), bool nodelay = default(bool))
+        public OverviewSocketOpts(int backlog = default(int), string connectionType = default(string), List<int> linger = default(List<int>), int port = default(int), bool exitOnClose = default(bool), bool nodelay = default(bool))
         {
             this.Backlog = backlog;
             this.ConnectionType = connectionType;
@@ -66,7 +65,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Linger
         /// </summary>
         [DataMember(Name="linger", EmitDefaultValue=false)]
-        public Collection<int> Linger { get; set; }
+        public List<int> Linger { get; set; }
 
         /// <summary>
         /// Gets or Sets Port
@@ -191,15 +190,6 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             }
         }
 
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
-        }
     }
 
 }

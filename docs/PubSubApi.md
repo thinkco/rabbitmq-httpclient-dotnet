@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="consumemessage"></a>
 # **ConsumeMessage**
-> ICollection<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null)
+> List<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null)
 
 Consume Message
 
@@ -40,7 +40,7 @@ namespace Example
             try
             {
                 // Consume Message
-                ICollection&lt;ConsumeResponse&gt; result = apiInstance.ConsumeMessage(vhost, queue, body);
+                List&lt;ConsumeResponse&gt; result = apiInstance.ConsumeMessage(vhost, queue, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<ConsumeResponse>**](ConsumeResponse.md)
+[**List<ConsumeResponse>**](ConsumeResponse.md)
 
 ### Authorization
 

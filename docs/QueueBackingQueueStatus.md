@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Q3** | **int** |  | [optional] 
 **Q4** | **int** |  | [optional] 
 **TargetRamCount** | **string** |  | [optional] 
-**Delta** | **Collection&lt;string&gt;** |  | [optional] 
+**Delta** | **List&lt;string&gt;** |  | [optional] 
 **NextSeqId** | **int** |  | [optional] 
 **AvgIngressRate** | **decimal** |  | [optional] 
 **AvgAckIngressRate** | **decimal** |  | [optional] 

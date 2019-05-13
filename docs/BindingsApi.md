@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 <a name="listbindings"></a>
 # **ListBindings**
-> ICollection<Binding> ListBindings ()
+> List<Binding> ListBindings ()
 
 List Bindings
 
@@ -248,7 +248,7 @@ namespace Example
             try
             {
                 // List Bindings
-                ICollection&lt;Binding&gt; result = apiInstance.ListBindings();
+                List&lt;Binding&gt; result = apiInstance.ListBindings();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -265,7 +265,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ICollection<Binding>**](Binding.md)
+[**List<Binding>**](Binding.md)
 
 ### Authorization
 
@@ -280,7 +280,7 @@ This endpoint does not need any parameter.
 
 <a name="listbindingsasdestination"></a>
 # **ListBindingsAsDestination**
-> ICollection<Binding> ListBindingsAsDestination (string vhost, string exchange)
+> List<Binding> ListBindingsAsDestination (string vhost, string exchange)
 
 List Bindings as Destination
 
@@ -309,7 +309,7 @@ namespace Example
             try
             {
                 // List Bindings as Destination
-                ICollection&lt;Binding&gt; result = apiInstance.ListBindingsAsDestination(vhost, exchange);
+                List&lt;Binding&gt; result = apiInstance.ListBindingsAsDestination(vhost, exchange);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<Binding>**](Binding.md)
+[**List<Binding>**](Binding.md)
 
 ### Authorization
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 <a name="listbindingsassource"></a>
 # **ListBindingsAsSource**
-> ICollection<Binding> ListBindingsAsSource (string vhost, string exchange)
+> List<Binding> ListBindingsAsSource (string vhost, string exchange)
 
 List Bindings as Source
 
@@ -374,7 +374,7 @@ namespace Example
             try
             {
                 // List Bindings as Source
-                ICollection&lt;Binding&gt; result = apiInstance.ListBindingsAsSource(vhost, exchange);
+                List&lt;Binding&gt; result = apiInstance.ListBindingsAsSource(vhost, exchange);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<Binding>**](Binding.md)
+[**List<Binding>**](Binding.md)
 
 ### Authorization
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 <a name="listbindingsforqueue"></a>
 # **ListBindingsForQueue**
-> ICollection<Binding> ListBindingsForQueue (string vhost, string queue)
+> List<Binding> ListBindingsForQueue (string vhost, string queue)
 
 List All Bindings for Queue
 
@@ -439,7 +439,7 @@ namespace Example
             try
             {
                 // List All Bindings for Queue
-                ICollection&lt;Binding&gt; result = apiInstance.ListBindingsForQueue(vhost, queue);
+                List&lt;Binding&gt; result = apiInstance.ListBindingsForQueue(vhost, queue);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<Binding>**](Binding.md)
+[**List<Binding>**](Binding.md)
 
 ### Authorization
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 <a name="listbindingsforqueueexchange"></a>
 # **ListBindingsForQueueExchange**
-> ICollection<Binding> ListBindingsForQueueExchange (string vhost, string exchange, string queue)
+> List<Binding> ListBindingsForQueueExchange (string vhost, string exchange, string queue)
 
 List Bindings for Queue
 
@@ -505,7 +505,7 @@ namespace Example
             try
             {
                 // List Bindings for Queue
-                ICollection&lt;Binding&gt; result = apiInstance.ListBindingsForQueueExchange(vhost, exchange, queue);
+                List&lt;Binding&gt; result = apiInstance.ListBindingsForQueueExchange(vhost, exchange, queue);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<Binding>**](Binding.md)
+[**List<Binding>**](Binding.md)
 
 ### Authorization
 

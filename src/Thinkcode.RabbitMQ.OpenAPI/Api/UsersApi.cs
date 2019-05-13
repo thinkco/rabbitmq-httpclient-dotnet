@@ -119,8 +119,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="user"></param>
-        /// <returns>ICollection&lt;PermissionUser&gt;</returns>
-        ICollection<PermissionUser> ListUserPermissions (string user);
+        /// <returns>List&lt;PermissionUser&gt;</returns>
+        List<PermissionUser> ListUserPermissions (string user);
 
         /// <summary>
         /// List User Permissions
@@ -130,8 +130,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="user"></param>
-        /// <returns>ApiResponse of ICollection&lt;PermissionUser&gt;</returns>
-        ApiResponse<ICollection<PermissionUser>> ListUserPermissionsWithHttpInfo (string user);
+        /// <returns>ApiResponse of List&lt;PermissionUser&gt;</returns>
+        ApiResponse<List<PermissionUser>> ListUserPermissionsWithHttpInfo (string user);
         /// <summary>
         /// List Users
         /// </summary>
@@ -139,8 +139,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;PermissionUser&gt;</returns>
-        ICollection<PermissionUser> ListUsers ();
+        /// <returns>List&lt;PermissionUser&gt;</returns>
+        List<PermissionUser> ListUsers ();
 
         /// <summary>
         /// List Users
@@ -149,8 +149,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;PermissionUser&gt;</returns>
-        ApiResponse<ICollection<PermissionUser>> ListUsersWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;PermissionUser&gt;</returns>
+        ApiResponse<List<PermissionUser>> ListUsersWithHttpInfo ();
         /// <summary>
         /// List Users without Permissions
         /// </summary>
@@ -158,8 +158,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;User&gt;</returns>
-        ICollection<User> ListUsersWithoutPermissions ();
+        /// <returns>List&lt;User&gt;</returns>
+        List<User> ListUsersWithoutPermissions ();
 
         /// <summary>
         /// List Users without Permissions
@@ -168,8 +168,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;User&gt;</returns>
-        ApiResponse<ICollection<User>> ListUsersWithoutPermissionsWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;User&gt;</returns>
+        ApiResponse<List<User>> ListUsersWithoutPermissionsWithHttpInfo ();
         #endregion Synchronous Operations
     }
 
@@ -271,8 +271,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="user"></param>
-        /// <returns>Task of ICollection&lt;PermissionUser&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<PermissionUser>> ListUserPermissionsAsync (string user);
+        /// <returns>Task of List&lt;PermissionUser&gt;</returns>
+        System.Threading.Tasks.Task<List<PermissionUser>> ListUserPermissionsAsync (string user);
 
         /// <summary>
         /// List User Permissions
@@ -282,8 +282,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="user"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;PermissionUser&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<PermissionUser>>> ListUserPermissionsAsyncWithHttpInfo (string user);
+        /// <returns>Task of ApiResponse (List&lt;PermissionUser&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<PermissionUser>>> ListUserPermissionsAsyncWithHttpInfo (string user);
         /// <summary>
         /// List Users
         /// </summary>
@@ -291,8 +291,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;PermissionUser&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<PermissionUser>> ListUsersAsync ();
+        /// <returns>Task of List&lt;PermissionUser&gt;</returns>
+        System.Threading.Tasks.Task<List<PermissionUser>> ListUsersAsync ();
 
         /// <summary>
         /// List Users
@@ -301,8 +301,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;PermissionUser&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<PermissionUser>>> ListUsersAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;PermissionUser&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<PermissionUser>>> ListUsersAsyncWithHttpInfo ();
         /// <summary>
         /// List Users without Permissions
         /// </summary>
@@ -310,8 +310,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;User&gt;</returns>
-        System.Threading.Tasks.Task<ICollection<User>> ListUsersWithoutPermissionsAsync ();
+        /// <returns>Task of List&lt;User&gt;</returns>
+        System.Threading.Tasks.Task<List<User>> ListUsersWithoutPermissionsAsync ();
 
         /// <summary>
         /// List Users without Permissions
@@ -320,8 +320,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;User&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ICollection<User>>> ListUsersWithoutPermissionsAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;User&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<User>>> ListUsersWithoutPermissionsAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -945,10 +945,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="user"></param>
-        /// <returns>ICollection&lt;PermissionUser&gt;</returns>
-        public ICollection<PermissionUser> ListUserPermissions (string user)
+        /// <returns>List&lt;PermissionUser&gt;</returns>
+        public List<PermissionUser> ListUserPermissions (string user)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<PermissionUser>> localVarResponse = ListUserPermissionsWithHttpInfo(user);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<PermissionUser>> localVarResponse = ListUserPermissionsWithHttpInfo(user);
              return localVarResponse.Data;
         }
 
@@ -957,8 +957,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="user"></param>
-        /// <returns>ApiResponse of ICollection&lt;PermissionUser&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<PermissionUser> > ListUserPermissionsWithHttpInfo (string user)
+        /// <returns>ApiResponse of List&lt;PermissionUser&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<PermissionUser> > ListUserPermissionsWithHttpInfo (string user)
         {
             // verify the required parameter 'user' is set
             if (user == null)
@@ -992,7 +992,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<PermissionUser> >("/users/{user}/permissions", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<PermissionUser> >("/users/{user}/permissions", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1008,10 +1008,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="user"></param>
-        /// <returns>Task of ICollection&lt;PermissionUser&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<PermissionUser>> ListUserPermissionsAsync (string user)
+        /// <returns>Task of List&lt;PermissionUser&gt;</returns>
+        public async System.Threading.Tasks.Task<List<PermissionUser>> ListUserPermissionsAsync (string user)
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<PermissionUser>> localVarResponse = await ListUserPermissionsAsyncWithHttpInfo(user);
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<PermissionUser>> localVarResponse = await ListUserPermissionsAsyncWithHttpInfo(user);
              return localVarResponse.Data;
 
         }
@@ -1021,8 +1021,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="user"></param>
-        /// <returns>Task of ApiResponse (ICollection&lt;PermissionUser&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<PermissionUser>>> ListUserPermissionsAsyncWithHttpInfo (string user)
+        /// <returns>Task of ApiResponse (List&lt;PermissionUser&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<PermissionUser>>> ListUserPermissionsAsyncWithHttpInfo (string user)
         {
             // verify the required parameter 'user' is set
             if (user == null)
@@ -1057,7 +1057,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<PermissionUser>>("/users/{user}/permissions", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<PermissionUser>>("/users/{user}/permissions", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1072,10 +1072,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Users 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;PermissionUser&gt;</returns>
-        public ICollection<PermissionUser> ListUsers ()
+        /// <returns>List&lt;PermissionUser&gt;</returns>
+        public List<PermissionUser> ListUsers ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<PermissionUser>> localVarResponse = ListUsersWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<PermissionUser>> localVarResponse = ListUsersWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -1083,8 +1083,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Users 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;PermissionUser&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<PermissionUser> > ListUsersWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;PermissionUser&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<PermissionUser> > ListUsersWithHttpInfo ()
         {
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
 
@@ -1112,7 +1112,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<PermissionUser> >("/users", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<PermissionUser> >("/users", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1127,10 +1127,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Users 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;PermissionUser&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<PermissionUser>> ListUsersAsync ()
+        /// <returns>Task of List&lt;PermissionUser&gt;</returns>
+        public async System.Threading.Tasks.Task<List<PermissionUser>> ListUsersAsync ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<PermissionUser>> localVarResponse = await ListUsersAsyncWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<PermissionUser>> localVarResponse = await ListUsersAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -1139,8 +1139,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Users 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;PermissionUser&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<PermissionUser>>> ListUsersAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;PermissionUser&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<PermissionUser>>> ListUsersAsyncWithHttpInfo ()
         {
 
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
@@ -1169,7 +1169,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<PermissionUser>>("/users", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<PermissionUser>>("/users", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1184,10 +1184,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Users without Permissions 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ICollection&lt;User&gt;</returns>
-        public ICollection<User> ListUsersWithoutPermissions ()
+        /// <returns>List&lt;User&gt;</returns>
+        public List<User> ListUsersWithoutPermissions ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<User>> localVarResponse = ListUsersWithoutPermissionsWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<User>> localVarResponse = ListUsersWithoutPermissionsWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -1195,8 +1195,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Users without Permissions 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ICollection&lt;User&gt;</returns>
-        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< ICollection<User> > ListUsersWithoutPermissionsWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;User&gt;</returns>
+        public Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse< List<User> > ListUsersWithoutPermissionsWithHttpInfo ()
         {
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
 
@@ -1224,7 +1224,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = this.Client.Get< ICollection<User> >("/users/without-permissions", requestOptions, this.Configuration);
+            var response = this.Client.Get< List<User> >("/users/without-permissions", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1239,10 +1239,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Users without Permissions 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ICollection&lt;User&gt;</returns>
-        public async System.Threading.Tasks.Task<ICollection<User>> ListUsersWithoutPermissionsAsync ()
+        /// <returns>Task of List&lt;User&gt;</returns>
+        public async System.Threading.Tasks.Task<List<User>> ListUsersWithoutPermissionsAsync ()
         {
-             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<User>> localVarResponse = await ListUsersWithoutPermissionsAsyncWithHttpInfo();
+             Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<User>> localVarResponse = await ListUsersWithoutPermissionsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -1251,8 +1251,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
         /// List Users without Permissions 
         /// </summary>
         /// <exception cref="Thinkcode.RabbitMQ.OpenAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ICollection&lt;User&gt;)</returns>
-        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<ICollection<User>>> ListUsersWithoutPermissionsAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;User&gt;)</returns>
+        public async System.Threading.Tasks.Task<Thinkcode.RabbitMQ.OpenAPI.Client.ApiResponse<List<User>>> ListUsersWithoutPermissionsAsyncWithHttpInfo ()
         {
 
             Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions requestOptions = new Thinkcode.RabbitMQ.OpenAPI.Client.RequestOptions();
@@ -1281,7 +1281,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
 
             // make the HTTP request
 
-            var response = await this.AsynchronousClient.GetAsync<ICollection<User>>("/users/without-permissions", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.GetAsync<List<User>>("/users/without-permissions", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

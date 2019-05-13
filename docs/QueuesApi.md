@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="consumemessage"></a>
 # **ConsumeMessage**
-> ICollection<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null)
+> List<ConsumeResponse> ConsumeMessage (string vhost, string queue, ConsumeRequest body = null)
 
 Consume Message
 
@@ -47,7 +47,7 @@ namespace Example
             try
             {
                 // Consume Message
-                ICollection&lt;ConsumeResponse&gt; result = apiInstance.ConsumeMessage(vhost, queue, body);
+                List&lt;ConsumeResponse&gt; result = apiInstance.ConsumeMessage(vhost, queue, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<ConsumeResponse>**](ConsumeResponse.md)
+[**List<ConsumeResponse>**](ConsumeResponse.md)
 
 ### Authorization
 
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 
 <a name="listbindingsforqueue"></a>
 # **ListBindingsForQueue**
-> ICollection<Binding> ListBindingsForQueue (string vhost, string queue)
+> List<Binding> ListBindingsForQueue (string vhost, string queue)
 
 List All Bindings for Queue
 
@@ -442,7 +442,7 @@ namespace Example
             try
             {
                 // List All Bindings for Queue
-                ICollection&lt;Binding&gt; result = apiInstance.ListBindingsForQueue(vhost, queue);
+                List&lt;Binding&gt; result = apiInstance.ListBindingsForQueue(vhost, queue);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<Binding>**](Binding.md)
+[**List<Binding>**](Binding.md)
 
 ### Authorization
 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 
 <a name="listqueues"></a>
 # **ListQueues**
-> ICollection<Queue> ListQueues ()
+> List<Queue> ListQueues ()
 
 List Queues
 
@@ -505,7 +505,7 @@ namespace Example
             try
             {
                 // List Queues
-                ICollection&lt;Queue&gt; result = apiInstance.ListQueues();
+                List&lt;Queue&gt; result = apiInstance.ListQueues();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -522,7 +522,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ICollection<Queue>**](Queue.md)
+[**List<Queue>**](Queue.md)
 
 ### Authorization
 
@@ -537,7 +537,7 @@ This endpoint does not need any parameter.
 
 <a name="listqueuesforvirtualhost"></a>
 # **ListQueuesForVirtualHost**
-> ICollection<Queue> ListQueuesForVirtualHost (string vhost)
+> List<Queue> ListQueuesForVirtualHost (string vhost)
 
 List Queues for VHost
 
@@ -565,7 +565,7 @@ namespace Example
             try
             {
                 // List Queues for VHost
-                ICollection&lt;Queue&gt; result = apiInstance.ListQueuesForVirtualHost(vhost);
+                List&lt;Queue&gt; result = apiInstance.ListQueuesForVirtualHost(vhost);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -585,7 +585,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ICollection<Queue>**](Queue.md)
+[**List<Queue>**](Queue.md)
 
 ### Authorization
 

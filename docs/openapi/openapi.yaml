@@ -2825,23 +2825,16 @@ components:
         truncate: 3013728
         count: 0
         encoding: string
-        ackmode: ack_requeue_false
+        ackmode: ack_requeue_true
       properties:
         count:
           minimum: 0
           type: integer
         ackmode:
-          default: ack_requeue_false
-          enum:
-          - ack_requeue_true
-          - ack_requeue_false
+          default: ack_requeue_true
           type: string
         encoding:
           default: string
-          enum:
-          - string
-          - base64
-          - auto
           type: string
         truncate:
           maximum: 5E+6
