@@ -16,6 +16,7 @@
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>Thinkcode.RabbitMQ.OpenAPI</RootNamespace>
     <Version>1.0.3</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
