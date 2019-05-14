@@ -3,8 +3,6 @@
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
     <AssemblyName>Thinkcode.RabbitMQ.OpenAPI</AssemblyName>
     <PackageId>Thinkcode.RabbitMQ.OpenAPI</PackageId>
     <OutputType>Library</OutputType>
@@ -40,4 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Converter\" />
+  </ItemGroup>
 </Project>

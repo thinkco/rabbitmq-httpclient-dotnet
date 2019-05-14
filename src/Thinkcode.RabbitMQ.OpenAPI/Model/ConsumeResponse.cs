@@ -21,6 +21,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using OpenAPIDateConverter = Thinkcode.RabbitMQ.OpenAPI.Client.OpenAPIDateConverter;
+using Thinkcode.RabbitMQ.OpenAPI.Converter;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Model
 {
@@ -87,6 +88,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// Gets or Sets Properties
         /// </summary>
         [DataMember(Name="properties", EmitDefaultValue=false)]
+        [JsonConverter(typeof(SingleOrArrayConverter<MessageProperties>))]
         public MessageProperties Properties { get; set; }
 
         /// <summary>
