@@ -1,4 +1,4 @@
-![![Nuget](https://img.shields.io/nuget/v/Thinkcode.RabbitMQ.OpenAPI.svg)](https://www.nuget.org/packages/Thinkcode.RabbitMQ.OpenAPI)
+[![Nuget](https://img.shields.io/nuget/v/Thinkcode.RabbitMQ.OpenAPI.svg)](https://www.nuget.org/packages/Thinkcode.RabbitMQ.OpenAPI)
 
 # Thinkcode.RabbitMQ.OpenAPI - the C# library for the Rabbitmq Http API
 
