@@ -31,7 +31,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.4";
+        public const string Version = "1.0.5";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -400,7 +400,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
                 Password = second.Password ?? first.Password,
                 AccessToken = second.AccessToken ?? first.AccessToken,
                 TempFolderPath = second.TempFolderPath ?? first.TempFolderPath,
-                DateTimeFormat = second.DateTimeFormat ?? first.DateTimeFormat
+                DateTimeFormat = second.DateTimeFormat ?? first.DateTimeFormat,
+                Proxy = second.Proxy ?? first.Proxy,
             };
             return config;
         }
