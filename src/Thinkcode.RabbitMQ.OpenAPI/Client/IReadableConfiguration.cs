@@ -10,6 +10,7 @@
 
 
 using System.Collections.Generic;
+using System.Net;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Client
 {
@@ -54,6 +55,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
         /// <value>Default header.</value>
         IDictionary<string, string> DefaultHeader { get; }
 
+        /// <summary>
+        /// Sets/Gets the proxy to be used.!--
+        /// </summary>
+        IWebProxy Proxy {get; set; }
         /// <summary>
         /// Gets the temp folder path.
         /// </summary>

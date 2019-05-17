@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Net;
 
 namespace Thinkcode.RabbitMQ.OpenAPI.Client
 {
@@ -30,7 +31,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.3";
+        public const string Version = "1.0.4";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -85,6 +86,8 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
         /// </summary>
         /// <value>The prefix of the API key.</value>
         private IDictionary<string, string> _apiKeyPrefix;
+
+        private IWebProxy _webProxy;
 
         private string _dateTimeFormat = ISO8601_DATETIME_FORMAT;
         private string _tempFolderPath = Path.GetTempPath();
@@ -318,6 +321,11 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
                 }
                 _apiKey = value;
             }
+        }
+
+        public IWebProxy Proxy { 
+            get { return _webProxy; }
+            set { _webProxy = value; }
         }
 
         #endregion Properties

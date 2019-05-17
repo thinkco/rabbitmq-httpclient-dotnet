@@ -383,6 +383,10 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Client
         {
             RestClient client = new RestClient(_baseUrl);
 
+            if (configuration.Proxy != null) {
+                client.Proxy = configuration.Proxy;
+            }
+
             client.ClearHandlers();
             var existingDeserializer = req.JsonSerializer as IDeserializer;
             if (existingDeserializer != null)
