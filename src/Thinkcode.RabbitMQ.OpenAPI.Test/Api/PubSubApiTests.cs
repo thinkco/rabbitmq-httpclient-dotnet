@@ -68,7 +68,16 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
             //Assert.IsType(typeof(PubSubApi), instance, "instance is a PubSubApi");
         }
 
-        
+        [Fact]
+        public void ConsumeMessageTestWithHttp()
+        {
+            ConsoleRunnerLogger logger = new ConsoleRunnerLogger(true);
+            logger.LogMessage("Testing");
+            var body = new ConsumeRequest(4, "ack_requeue_false", "auto", 50000);
+            var response = instance.ConsumeMessageWithHttpInfo(vhost, queue, body);
+            Assert.NotNull(response);
+        }
+
         /// <summary>
         /// Test ConsumeMessage
         /// </summary>

@@ -610,6 +610,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -693,6 +694,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -779,6 +781,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -867,6 +870,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -954,6 +958,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1043,6 +1048,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1098,6 +1104,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1155,6 +1162,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1226,6 +1234,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1299,6 +1308,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1370,6 +1380,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1443,6 +1454,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1514,6 +1526,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1587,6 +1600,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1666,6 +1680,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
@@ -1747,6 +1762,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Api
             if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
             {
                 requestOptions.HeaderParameters.Add("Authorization", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+                requestOptions.HeaderParameters.Add("X-Auth-Fallback", "Basic " + Thinkcode.RabbitMQ.OpenAPI.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
             }
 
             // make the HTTP request
