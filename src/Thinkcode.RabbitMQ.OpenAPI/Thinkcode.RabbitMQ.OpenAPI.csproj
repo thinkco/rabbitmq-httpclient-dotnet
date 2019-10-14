@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>Thinkcode.RabbitMQ.OpenAPI</AssemblyName>
     <PackageId>Thinkcode.RabbitMQ.OpenAPI</PackageId>
     <OutputType>Library</OutputType>
@@ -15,8 +14,16 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <RootNamespace>Thinkcode.RabbitMQ.OpenAPI</RootNamespace>
-    <Version>1.0.7</Version>
+    <Version>1.0.8</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0</TargetFrameworks>
+    <PackageProjectUrl>https://github.com/thinkco/rabbitmq-httpclient-dotnet</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/thinkco/rabbitmq-httpclient-dotnet/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://secure.gravatar.com/avatar/a4b9e3ad2402076da42fc66e12e3e1cc?s=512&amp;r=g&amp;d=retro</PackageIconUrl>
+    <RepositoryUrl>https://github.com/thinkco/rabbitmq-httpclient-dotnet.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>rabbitmq, openapi, rest</PackageTags>
+    <PackageVersion>1.0.8</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>

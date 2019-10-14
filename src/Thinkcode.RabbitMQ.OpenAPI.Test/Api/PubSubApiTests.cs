@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
+using Newtonsoft.Json;
 using RestSharp;
 using Xunit;
 
@@ -35,7 +36,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
         private PubSubApi instance;
         private const string userName = "testuser";
         private const string userPass = "testpass";
-        private const string basePath = "https://mb1.bus.adaptive.me/rabbitmq/api";
+        private const string basePath = "http://macbuntu.local:15672/api";
         private const string vhost = "test";
         private const string exchange = "shared.exchange";
         private const string queue = "shared.queue";
@@ -97,20 +98,89 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Test
         [Fact]
         public void PublishMessageTest()
         {
-            var body = new PublishRequest(routingKey, "Payload", PublishRequest.PayloadEncodingEnum.String, new PublishProperties());
+            var payload = "PublishMessageWithPropertiesTest";
+            var body = new PublishRequest(routingKey, payload, PublishRequest.PayloadEncodingEnum.String, new PublishProperties());
             var response = instance.PublishMessage(vhost, exchange, body);
             Assert.NotNull(response);
             Assert.True(response.Routed);
+            
+            var request = new ConsumeRequest(1, "ack_requeue_false","auto", 50000000);
+            var consumeResponseList = instance.ConsumeMessage(vhost, "shared.queue", request);
+            var consumeResponse = consumeResponseList[0];
+            Assert.NotNull(consumeResponse);
+            Assert.Equal(payload, consumeResponse.Payload);
         }
 
         [Fact]
         public void PublishMessageWithPropertiesTest()
         {
-
-            var body = new PublishRequest(routingKey, "Payload", PublishRequest.PayloadEncodingEnum.String, new PublishProperties("appid","correlationid","messageid",userName,2));
+            var payload = "PublishMessageWithPropertiesTest";
+            var body = new PublishRequest(routingKey, payload, PublishRequest.PayloadEncodingEnum.String, new PublishProperties("appid","correlationid","messageid",userName,2));
             var response = instance.PublishMessage(vhost, exchange, body);
             Assert.NotNull(response);
             Assert.True(response.Routed);
+            
+            var request = new ConsumeRequest(1, "ack_requeue_false","auto", 50000000);
+            var consumeResponseList = instance.ConsumeMessage(vhost, "shared.queue", request);
+            var consumeResponse = consumeResponseList[0];
+            Assert.NotNull(consumeResponse);
+            Assert.Equal(payload, consumeResponse.Payload);
+        }
+        
+        [Fact]
+        public void PublishMessageWithPropertiesAndHeaderTest()
+        {
+            var payload = "PublishMessageWithPropertiesAndHeaderTest";
+            var headers = new Dictionary<String,String>();
+            headers.Add("MyHeader1", "MyHeaderValue1");
+            headers.Add("MyHeader2", "MyHeaderValue2");
+            headers.Add("MyHeader3", "MyHeaderValue3");
+            headers.Add("MyHeader4", "MyHeaderValue4");
+            headers.Add("MyHeader5", "MyHeaderValue5");
+            var properties = new PublishProperties("appid", "correlationid", "messageid", userName, 2, headers);
+            var body = new PublishRequest(routingKey, payload, PublishRequest.PayloadEncodingEnum.String, properties);
+            var response = instance.PublishMessage(vhost, exchange, body);
+            Assert.NotNull(response);
+            Assert.True(response.Routed);
+            
+            var request = new ConsumeRequest(1, "ack_requeue_false","auto", 50000000);
+            var consumeResponseList = instance.ConsumeMessage(vhost, "shared.queue", request);
+            var consumeResponse = consumeResponseList[0];
+            Assert.NotNull(consumeResponse);
+            Assert.Equal(payload, consumeResponse.Payload);
+            Assert.Equal(headers, consumeResponse.Properties.Headers);
+        }
+        
+        [Fact]
+        public void Publish1000MessagesWithPropertiesAndHeaderTest()
+        {
+            var headers = new Dictionary<String, String>();
+            headers.Add("MyHeader1", "MyHeaderValue1");
+            headers.Add("MyHeader2", "MyHeaderValue2");
+            headers.Add("MyHeader3", "MyHeaderValue3");
+            headers.Add("MyHeader4", "MyHeaderValue4");
+            headers.Add("MyHeader5", "MyHeaderValue5");
+            var payload = "Publish1000MessagesWithPropertiesAndHeaderTest";
+            
+            for (int i = 0; i < 1000; i++)
+            {
+                var properties = new PublishProperties("appid", "correlationid", "messageid", userName, 2, headers);
+                var body = new PublishRequest(routingKey, payload+i, PublishRequest.PayloadEncodingEnum.String,
+                    properties);
+                var response = instance.PublishMessage(vhost, exchange, body);
+                Assert.NotNull(response);
+                Assert.True(response.Routed);
+            }
+
+            for (int i = 0; i < 1000; i++)
+            {
+                var request = new ConsumeRequest(1, "ack_requeue_false", "auto", 50000000);
+                var consumeResponseList = instance.ConsumeMessage(vhost, "shared.queue", request);
+                var consumeResponse = consumeResponseList[0];
+                Assert.NotNull(consumeResponse);
+                Assert.Equal(payload + i, consumeResponse.Payload);
+                Assert.Equal(headers, consumeResponse.Properties.Headers);
+            }
         }
 
     }

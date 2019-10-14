@@ -38,13 +38,14 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="messageId">messageId.</param>
         /// <param name="userId">userId.</param>
         /// <param name="deliveryMode">1 &#x3D; Non Persistent, 2 &#x3D; Persistent.</param>
-        public PublishProperties(string appId = default(string), string correlationId = default(string), string messageId = default(string), string userId = default(string), int deliveryMode = default(int))
+        public PublishProperties(string appId = default(string), string correlationId = default(string), string messageId = default(string), string userId = default(string), int deliveryMode = default(int), Dictionary<String,String> headers = default(Dictionary<String,String>))
         {
             this.AppId = appId;
             this.CorrelationId = correlationId;
             this.MessageId = messageId;
             this.UserId = userId;
             this.DeliveryMode = deliveryMode;
+            this.Headers = headers;
         }
         
         /// <summary>
@@ -78,6 +79,13 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         [DataMember(Name="delivery_mode", EmitDefaultValue=false)]
         public int DeliveryMode { get; set; }
 
+        
+        /// <summary>
+        /// Headers Key:Value to include with the payload and standard properties
+        /// </summary>
+        [DataMember(Name="headers", EmitDefaultValue=false)]
+        public Dictionary<String, String> Headers { get; set; }
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -91,6 +99,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             sb.Append("  MessageId: ").Append(MessageId).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("  DeliveryMode: ").Append(DeliveryMode).Append("\n");
+            sb.Append("  Headers: ").Append(Headers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

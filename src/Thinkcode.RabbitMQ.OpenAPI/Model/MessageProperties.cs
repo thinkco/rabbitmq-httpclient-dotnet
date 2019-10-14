@@ -42,7 +42,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         /// <param name="deliveryMode">1 &#x3D; Non Persistent, 2 &#x3D; Persistent.</param>
         /// <param name="priority">priority.</param>
         /// <param name="clusterId">clusterId.</param>
-        public MessageProperties(string appId = default(string), string correlationId = default(string), string messageId = default(string), string userId = default(string), int timestamp = default(int), string contentType = default(string), int deliveryMode = default(int), int priority = default(int), string clusterId = default(string))
+        public MessageProperties(string appId = default(string), string correlationId = default(string), string messageId = default(string), string userId = default(string), int timestamp = default(int), string contentType = default(string), int deliveryMode = default(int), int priority = default(int), string clusterId = default(string), Dictionary<String,String> headers = default(Dictionary<String,String>))
         {
             this.AppId = appId;
             this.CorrelationId = correlationId;
@@ -53,6 +53,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             this.DeliveryMode = deliveryMode;
             this.Priority = priority;
             this.ClusterId = clusterId;
+            this.Headers = headers;
         }
         
         /// <summary>
@@ -111,6 +112,12 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
         public string ClusterId { get; set; }
 
         /// <summary>
+        /// Headers Key:Value to include with the payload and standard properties
+        /// </summary>
+        [DataMember(Name="headers", EmitDefaultValue=false)]
+        public Dictionary<String, String> Headers { get; set; }
+        
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -127,6 +134,7 @@ namespace Thinkcode.RabbitMQ.OpenAPI.Model
             sb.Append("  DeliveryMode: ").Append(DeliveryMode).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
             sb.Append("  ClusterId: ").Append(ClusterId).Append("\n");
+            sb.Append("  Headers: ").Append(Headers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
