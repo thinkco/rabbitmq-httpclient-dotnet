@@ -24,7 +24,15 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>rabbitmq, openapi, rest</PackageTags>
     <PackageVersion>1.0.8</PackageVersion>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
 
   <ItemGroup>
       <PackageReference Include="CompareNETObjects" Version="4.57.0" />
